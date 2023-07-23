@@ -66,6 +66,9 @@ Partial Class FormAdministrador
         '
         'PanelForm
         '
+        Me.PanelForm.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelForm.BackColor = System.Drawing.SystemColors.Control
         Me.PanelForm.Controls.Add(Me.PictureBox1)
         Me.PanelForm.Location = New System.Drawing.Point(240, 40)
@@ -75,6 +78,9 @@ Partial Class FormAdministrador
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(3, 72)
         Me.PictureBox1.Name = "PictureBox1"
@@ -109,10 +115,11 @@ Partial Class FormAdministrador
         'LabelUsuario
         '
         Me.LabelUsuario.AutoSize = True
+        Me.LabelUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelUsuario.ForeColor = System.Drawing.SystemColors.Control
         Me.LabelUsuario.Location = New System.Drawing.Point(91, 16)
         Me.LabelUsuario.Name = "LabelUsuario"
-        Me.LabelUsuario.Size = New System.Drawing.Size(39, 13)
+        Me.LabelUsuario.Size = New System.Drawing.Size(50, 16)
         Me.LabelUsuario.TabIndex = 2
         Me.LabelUsuario.Text = "Label1"
         '
@@ -128,6 +135,7 @@ Partial Class FormAdministrador
         '
         'btnCerrarSesion
         '
+        Me.btnCerrarSesion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnCerrarSesion.FlatAppearance.BorderSize = 0
         Me.btnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
