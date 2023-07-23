@@ -268,6 +268,7 @@ Partial Class FormAdministrador
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(550, 400)
         Me.Name = "FormAdministrador"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormAdministrador"
         Me.PanelContenedor.ResumeLayout(False)
         Me.PanelForm.ResumeLayout(False)
