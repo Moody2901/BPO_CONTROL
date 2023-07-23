@@ -117,7 +117,7 @@ Partial Class FormAdministrador
         Me.LabelUsuario.AutoSize = True
         Me.LabelUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelUsuario.ForeColor = System.Drawing.SystemColors.Control
-        Me.LabelUsuario.Location = New System.Drawing.Point(91, 16)
+        Me.LabelUsuario.Location = New System.Drawing.Point(82, 36)
         Me.LabelUsuario.Name = "LabelUsuario"
         Me.LabelUsuario.Size = New System.Drawing.Size(50, 16)
         Me.LabelUsuario.TabIndex = 2
@@ -265,6 +265,7 @@ Partial Class FormAdministrador
         Me.ClientSize = New System.Drawing.Size(1024, 513)
         Me.Controls.Add(Me.PanelContenedor)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(550, 400)
         Me.Name = "FormAdministrador"
         Me.Text = "FormAdministrador"
