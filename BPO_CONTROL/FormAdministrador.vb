@@ -141,6 +141,8 @@ Public Class FormAdministrador
         LabelUsuario.Text = "Bienvenido, " & nombreUsuario & "!"
     End Sub
 
+
+
     Private Sub btnUsuario_Click(sender As Object, e As EventArgs) Handles btnUsuario.Click
         AbrirFormEnPanel(Of FormCrud)()
         btnUsuario.BackColor = Color.FromArgb(12, 61, 92)
@@ -159,11 +161,6 @@ Public Class FormAdministrador
         If (Application.OpenForms("FormReporte") Is Nothing) Then
             btnReporte.BackColor = Color.FromArgb(37, 54, 75)
         End If
-
-        If (Application.OpenForms("Form3") Is Nothing) Then
-            Button3.BackColor = Color.FromArgb(37, 54, 75)
-        End If
-
 
     End Sub
 #End Region

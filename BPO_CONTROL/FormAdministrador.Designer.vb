@@ -31,7 +31,6 @@ Partial Class FormAdministrador
         Me.LabelUsuario = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.btnReporte = New System.Windows.Forms.Button()
         Me.btnUsuario = New System.Windows.Forms.Button()
         Me.PanelBarraTitulo = New System.Windows.Forms.Panel()
@@ -94,7 +93,6 @@ Partial Class FormAdministrador
         Me.PanelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(75, Byte), Integer))
         Me.PanelMenu.Controls.Add(Me.Panel1)
         Me.PanelMenu.Controls.Add(Me.btnCerrarSesion)
-        Me.PanelMenu.Controls.Add(Me.Button3)
         Me.PanelMenu.Controls.Add(Me.btnReporte)
         Me.PanelMenu.Controls.Add(Me.btnUsuario)
         Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
@@ -150,21 +148,6 @@ Partial Class FormAdministrador
         Me.btnCerrarSesion.TabIndex = 3
         Me.btnCerrarSesion.Text = "Cerrar Sesión"
         Me.btnCerrarSesion.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button3.Location = New System.Drawing.Point(3, 189)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(234, 38)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'btnReporte
         '
@@ -295,7 +278,6 @@ Partial Class FormAdministrador
     Friend WithEvents btnMaximizar As PictureBox
     Friend WithEvents btnMinimizar As PictureBox
     Friend WithEvents btnCerrar As PictureBox
-    Friend WithEvents Button3 As Button
     Friend WithEvents btnReporte As Button
     Friend WithEvents btnUsuario As Button
     Friend WithEvents PictureBox1 As PictureBox

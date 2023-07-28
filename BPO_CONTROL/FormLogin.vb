@@ -51,7 +51,7 @@ Public Class FormLogin
 
 
             ' Abrir el formulario de usuario normal
-            Dim formUsuario As New FormUsuario()
+            Dim formUsuario As New FormUsuario(usuario)
             formUsuario.Show()
 
             ' Luego, oculta el formulario de login actual
