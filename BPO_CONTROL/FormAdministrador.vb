@@ -141,8 +141,6 @@ Public Class FormAdministrador
         LabelUsuario.Text = "Bienvenido, " & nombreUsuario & "!"
     End Sub
 
-
-
     Private Sub btnUsuario_Click(sender As Object, e As EventArgs) Handles btnUsuario.Click
         AbrirFormEnPanel(Of FormCrud)()
         btnUsuario.BackColor = Color.FromArgb(12, 61, 92)

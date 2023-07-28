@@ -79,10 +79,22 @@
     <Compile Include="FormAdministrador.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormAgregar.Designer.vb">
+      <DependentUpon>FormAgregar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCrud.Designer.vb">
       <DependentUpon>FormCrud.vb</DependentUpon>
     </Compile>
     <Compile Include="FormCrud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditar.Designer.vb">
+      <DependentUpon>FormEditar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.vb">
@@ -124,8 +136,14 @@
     <EmbeddedResource Include="FormAdministrador.resx">
       <DependentUpon>FormAdministrador.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregar.resx">
+      <DependentUpon>FormAgregar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCrud.resx">
       <DependentUpon>FormCrud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditar.resx">
+      <DependentUpon>FormEditar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>

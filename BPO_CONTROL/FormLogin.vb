@@ -33,15 +33,6 @@ Public Class FormLogin
             Dim formAdministrador As New FormAdministrador(usuario)
             formAdministrador.Show()
 
-
-            Try
-                Process.Start("excel.exe")
-            Catch ex As Exception
-                ' Si ocurre un error al abrir Excel, muestra un mensaje
-                MessageBox.Show("No se pudo abrir Excel: " & ex.Message, "Error al abrir Excel", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-
-
             ' Luego, oculta el formulario de login actual
             Me.Hide()
 
@@ -53,6 +44,14 @@ Public Class FormLogin
             ' Abrir el formulario de usuario normal
             Dim formUsuario As New FormUsuario(usuario)
             formUsuario.Show()
+
+            Try
+                Process.Start("excel.exe")
+            Catch ex As Exception
+                ' Si ocurre un error al abrir Excel, muestra un mensaje
+                MessageBox.Show("No se pudo abrir Excel: " & ex.Message, "Error al abrir Excel", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
 
             ' Luego, oculta el formulario de login actual
             Me.Hide()
