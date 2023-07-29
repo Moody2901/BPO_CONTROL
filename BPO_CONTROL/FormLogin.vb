@@ -65,6 +65,8 @@ Public Class FormLogin
         End If
     End Sub
 
+    ' Eventos Enter y Leave para los cuadros de texto de usuario y contraseña
+    ' Estos eventos permiten mostrar texto de ayuda dentro de los cuadros de texto
     Private Sub txtUsuario_Enter(sender As Object, e As EventArgs) Handles txtUsuario.Enter
         If txtUsuario.Text = "USUARIO" Then
             txtUsuario.Text = ""
@@ -83,7 +85,7 @@ Public Class FormLogin
         If txtContraseña.Text = "CONTRASEÑA" Then
             txtContraseña.Text = ""
             txtContraseña.ForeColor = Color.LightGray
-            txtContraseña.UseSystemPasswordChar = True
+            txtContraseña.UseSystemPasswordChar = True ' Ocultar caracteres de contraseña
         End If
     End Sub
 
@@ -91,13 +93,15 @@ Public Class FormLogin
         If txtContraseña.Text = "" Then
             txtContraseña.Text = "CONTRASEÑA"
             txtContraseña.ForeColor = Color.DimGray
-            txtContraseña.UseSystemPasswordChar = False
+            txtContraseña.UseSystemPasswordChar = False ' Mostrar caracteres de contraseña
         End If
     End Sub
 
+    ' Evento Click del PictureBox2 (botón "Cerrar") para salir de la aplicación.
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Application.Exit()
     End Sub
 End Class
+
 
 
