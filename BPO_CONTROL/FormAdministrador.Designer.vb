@@ -154,7 +154,7 @@ Partial Class FormAdministrador
         Me.btnReporte.FlatAppearance.BorderSize = 0
         Me.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReporte.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReporte.ForeColor = System.Drawing.SystemColors.Control
         Me.btnReporte.Image = CType(resources.GetObject("btnReporte.Image"), System.Drawing.Image)
@@ -171,7 +171,7 @@ Partial Class FormAdministrador
         Me.btnUsuario.FlatAppearance.BorderSize = 0
         Me.btnUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnUsuario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsuario.ForeColor = System.Drawing.SystemColors.Control
         Me.btnUsuario.Image = CType(resources.GetObject("btnUsuario.Image"), System.Drawing.Image)

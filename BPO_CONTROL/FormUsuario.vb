@@ -1,5 +1,6 @@
 ﻿Imports System.Threading
 
+
 Public Class FormUsuario
 
     Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
@@ -18,6 +19,8 @@ Public Class FormUsuario
     Private cronometro As New Stopwatch()
 
     Private Sub FormUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
         ' Mostrar el nombre de usuario en una etiqueta dentro de un panel
         LabelUsuario.Text = "Bienvenido, " & nombreUsuario & "!"
 

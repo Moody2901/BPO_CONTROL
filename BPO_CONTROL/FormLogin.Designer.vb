@@ -55,6 +55,7 @@ Partial Class FormLogin
         '
         Me.LabelHora.AutoSize = True
         Me.LabelHora.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelHora.ForeColor = System.Drawing.Color.White
         Me.LabelHora.Location = New System.Drawing.Point(21, 202)
         Me.LabelHora.Name = "LabelHora"
         Me.LabelHora.Size = New System.Drawing.Size(61, 19)
@@ -65,6 +66,7 @@ Partial Class FormLogin
         '
         Me.LabelFecha.AutoSize = True
         Me.LabelFecha.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelFecha.ForeColor = System.Drawing.Color.White
         Me.LabelFecha.Location = New System.Drawing.Point(21, 153)
         Me.LabelFecha.Name = "LabelFecha"
         Me.LabelFecha.Size = New System.Drawing.Size(61, 19)

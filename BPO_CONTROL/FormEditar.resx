@@ -121,7 +121,27 @@
   <data name="btnEditarU.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAXnyAAF58gHCc4xVAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAXnxAAF58QFvyq04AAAAB3RJ
+        TUUH5QsWDiAnsu+lAAAAAxpJREFUWEft1rmPTVEcwPEniC3WhMRuxlCiEDq0tkL4AyTCGBI6Oh0JhcIW
+        UYiC6JBoUCC2hsQWiULsBIUl9t33+/I75rjuG+/NTKGYX/IJc+55v9/v3nvuubfSEz1RFk1NTRqK2ZiH
+        uZ1g9EJkrSPa2tpS8Wk4gff4hI/4EP/6dy0e12fcRSv6ICr8I5yIIbD4C2zDKhzGV2yHSdtKrMedsBHn
+        8BbrUF8TToKX/R0snsYs4Bl6aWN2e8ScAbgQ+mEsjqP+JpwAi1jMomms0Qb8v2PjkJpobWlpqc6tGR5E
+        dzYgmzgDb80kx2qGB1HWgPfdNbAMfWGBXH+MxlWcjr/znN4Cc85J46URk8samIlH4TzSmSaOWdzVvwnV
+        32U5O7yCvyMmlzXg8zwfx1AsnpyFxUcgMnZDAyniWNnlT7zsf208/o2uN9DZiJxL4CJsvIEwGBNqmAhX
+        em9Umpubne8VcR/w+HC4B0zBSES1kvAgig3Mwik8xZMCx24jbbnN2ICT8Iwf4Ap2wXdKx5uRB5E34I5m
+        Mrfl/dhbsA9r4LwFuImfNbzGVgxDVCyEB5Aa8Kx8tj1Ti1eP55HGsBDOywt+x5eSsT0YhMiShYPIGxgD
+        E3u2Mas9HMNk3EBeSAexHA+zMblXmLv6+z8iButqwL+D9zwvkBzAQCyCG1h+7CJcnJEtwgE00oDPvq/u
+        PHnyDTvgE1RswretizKyRTiARhrwUXO1m/QHDmEl/O1qrIBznLsYz5GacF5ki3AAjTTgc+6jZkJfVhYd
+        BX8n94fqgoP7xS2kBpwb2SIcQPog2Yzx6KgB7+NlpKRvcB829RhHYRM+TUeQ5tnsUkS2CAeQPsmewQ3k
+        FXzb2bF7g9bC7dV3w06kxLlrmIFicd2DT09UzsJBTIcbkFcifWh6WxKfb++926uL6SXyAtoC73+xuFyc
+        tb+YPYB6Psvd230HuMO5yeRFvILe8+K4V2YqoloXw0Rwe90NN5m8WNF1VL+K1G0RCV3tfsJfgrcuFXXB
+        uTBdK9UzV7dHSgyfDG+bz7kL1u9IF1z1df2fRaXyCxpnDJzv7ZdAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAXnrAAF56wF9qnYeAAAAB3RJ
         TUUH5QsWDiAnsu+lAAAAAxpJREFUWEft1rmPTVEcwPEniC3WhMRuxlCiEDq0tkL4AyTCGBI6Oh0JhcIW
         UYiC6JBoUCC2hsQWiULsBIUl9t33+/I75rjuG+/NTKGYX/IJc+55v9/v3nvuubfSEz1RFk1NTRqK2ZiH
         uZ1g9EJkrSPa2tpS8Wk4gff4hI/4EP/6dy0e12fcRSv6ICr8I5yIIbD4C2zDKhzGV2yHSdtKrMedsBHn

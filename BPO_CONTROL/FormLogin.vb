@@ -1,7 +1,7 @@
 ﻿Imports System.Threading
-Imports System.Timers
 
 Public Class FormLogin
+    ' Propiedad para almacenar el nombre del usuario que ha iniciado sesión
     Public Property NombreUsuarioLogeado As String
 
     Private Sub FormLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -29,7 +29,7 @@ Public Class FormLogin
             ' Inicio de sesión exitoso para el usuario administrativo
             MessageBox.Show("Inicio de sesión exitoso como Administrador", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            ' Abrir el formulario de administrador
+            ' Abrir el formulario de administrador y pasar el nombre de usuario
             Dim formAdministrador As New FormAdministrador(usuario)
             formAdministrador.Show()
 
@@ -40,18 +40,17 @@ Public Class FormLogin
             ' Inicio de sesión exitoso para el usuario normal
             MessageBox.Show("Inicio de sesión exitoso como Usuario Normal", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
-            ' Abrir el formulario de usuario normal
+            ' Abrir el formulario de usuario normal y pasar el nombre de usuario
             Dim formUsuario As New FormUsuario(usuario)
             formUsuario.Show()
 
             Try
+                ' Intentar abrir Excel
                 Process.Start("excel.exe")
             Catch ex As Exception
                 ' Si ocurre un error al abrir Excel, muestra un mensaje
                 MessageBox.Show("No se pudo abrir Excel: " & ex.Message, "Error al abrir Excel", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-
 
             ' Luego, oculta el formulario de login actual
             Me.Hide()
@@ -67,21 +66,21 @@ Public Class FormLogin
     End Sub
 
     Private Sub txtUsuario_Enter(sender As Object, e As EventArgs) Handles txtUsuario.Enter
-        If (txtUsuario.Text = "USUARIO") Then
+        If txtUsuario.Text = "USUARIO" Then
             txtUsuario.Text = ""
             txtUsuario.ForeColor = Color.LightGray
         End If
     End Sub
 
     Private Sub txtUsuario_Leave(sender As Object, e As EventArgs) Handles txtUsuario.Leave
-        If (txtUsuario.Text = "") Then
+        If txtUsuario.Text = "" Then
             txtUsuario.Text = "USUARIO"
             txtUsuario.ForeColor = Color.DimGray
         End If
     End Sub
 
     Private Sub txtContraseña_Enter(sender As Object, e As EventArgs) Handles txtContraseña.Enter
-        If (txtContraseña.Text = "CONTRASEÑA") Then
+        If txtContraseña.Text = "CONTRASEÑA" Then
             txtContraseña.Text = ""
             txtContraseña.ForeColor = Color.LightGray
             txtContraseña.UseSystemPasswordChar = True
@@ -89,7 +88,7 @@ Public Class FormLogin
     End Sub
 
     Private Sub txtContraseña_Leave(sender As Object, e As EventArgs) Handles txtContraseña.Leave
-        If (txtContraseña.Text = "") Then
+        If txtContraseña.Text = "" Then
             txtContraseña.Text = "CONTRASEÑA"
             txtContraseña.ForeColor = Color.DimGray
             txtContraseña.UseSystemPasswordChar = False
@@ -99,7 +98,6 @@ Public Class FormLogin
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Application.Exit()
     End Sub
-
-
 End Class
+
 
