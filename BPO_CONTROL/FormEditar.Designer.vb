@@ -26,13 +26,15 @@ Partial Class FormEditar
         Me.btnEditarU = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboBoxStatus = New System.Windows.Forms.ComboBox()
         Me.ComboBoxRol = New System.Windows.Forms.ComboBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtUsuarioA = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnEditarU
@@ -57,7 +59,7 @@ Partial Class FormEditar
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(10, 135)
+        Me.Label2.Location = New System.Drawing.Point(9, 159)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(289, 13)
         Me.Label2.TabIndex = 31
@@ -68,27 +70,16 @@ Partial Class FormEditar
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(10, 86)
+        Me.Label1.Location = New System.Drawing.Point(9, 110)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(289, 13)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "_______________________________________________"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(10, 35)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(457, 13)
-        Me.Label3.TabIndex = 29
-        Me.Label3.Text = "___________________________________________________________________________"
-        '
         'ComboBoxStatus
         '
         Me.ComboBoxStatus.FormattingEnabled = True
-        Me.ComboBoxStatus.Location = New System.Drawing.Point(318, 105)
+        Me.ComboBoxStatus.Location = New System.Drawing.Point(317, 151)
         Me.ComboBoxStatus.Name = "ComboBoxStatus"
         Me.ComboBoxStatus.Size = New System.Drawing.Size(248, 21)
         Me.ComboBoxStatus.TabIndex = 28
@@ -96,7 +87,7 @@ Partial Class FormEditar
         'ComboBoxRol
         '
         Me.ComboBoxRol.FormattingEnabled = True
-        Me.ComboBoxRol.Location = New System.Drawing.Point(318, 66)
+        Me.ComboBoxRol.Location = New System.Drawing.Point(317, 102)
         Me.ComboBoxRol.Name = "ComboBoxRol"
         Me.ComboBoxRol.Size = New System.Drawing.Size(248, 21)
         Me.ComboBoxRol.TabIndex = 27
@@ -107,7 +98,7 @@ Partial Class FormEditar
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtPassword.Location = New System.Drawing.Point(13, 112)
+        Me.txtPassword.Location = New System.Drawing.Point(12, 136)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(286, 20)
         Me.txtPassword.TabIndex = 26
@@ -119,7 +110,7 @@ Partial Class FormEditar
         Me.txtUsuarioA.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUsuarioA.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuarioA.ForeColor = System.Drawing.Color.Black
-        Me.txtUsuarioA.Location = New System.Drawing.Point(13, 63)
+        Me.txtUsuarioA.Location = New System.Drawing.Point(12, 87)
         Me.txtUsuarioA.Name = "txtUsuarioA"
         Me.txtUsuarioA.Size = New System.Drawing.Size(286, 20)
         Me.txtUsuarioA.TabIndex = 25
@@ -131,9 +122,9 @@ Partial Class FormEditar
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtNombre.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
-        Me.txtNombre.Location = New System.Drawing.Point(13, 12)
+        Me.txtNombre.Location = New System.Drawing.Point(12, 36)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(454, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(304, 20)
         Me.txtNombre.TabIndex = 24
         Me.txtNombre.Text = "Nombre Completo"
         '
@@ -154,15 +145,35 @@ Partial Class FormEditar
         Me.btnGuardar.Text = "Guardar Nuevo Usuario"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
+        Me.Label3.Location = New System.Drawing.Point(9, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(307, 13)
+        Me.Label3.TabIndex = 32
+        Me.Label3.Text = "__________________________________________________"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(416, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(149, 74)
+        Me.PictureBox1.TabIndex = 33
+        Me.PictureBox1.TabStop = False
+        '
         'FormEditar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(577, 236)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ComboBoxStatus)
         Me.Controls.Add(Me.ComboBoxRol)
         Me.Controls.Add(Me.txtPassword)
@@ -174,6 +185,7 @@ Partial Class FormEditar
         Me.Name = "FormEditar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Usuario"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -182,11 +194,12 @@ Partial Class FormEditar
     Friend WithEvents btnEditarU As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents ComboBoxStatus As ComboBox
     Friend WithEvents ComboBoxRol As ComboBox
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents txtUsuarioA As TextBox
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents btnGuardar As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

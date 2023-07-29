@@ -32,6 +32,8 @@ Partial Class FormAgregar
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnGuardar
@@ -57,9 +59,9 @@ Partial Class FormAgregar
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtNombre.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
-        Me.txtNombre.Location = New System.Drawing.Point(12, 12)
+        Me.txtNombre.Location = New System.Drawing.Point(15, 29)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(454, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(304, 20)
         Me.txtNombre.TabIndex = 15
         Me.txtNombre.Text = "Nombre Completo"
         '
@@ -69,7 +71,7 @@ Partial Class FormAgregar
         Me.txtUsuarioA.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUsuarioA.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuarioA.ForeColor = System.Drawing.Color.Black
-        Me.txtUsuarioA.Location = New System.Drawing.Point(12, 63)
+        Me.txtUsuarioA.Location = New System.Drawing.Point(15, 80)
         Me.txtUsuarioA.Name = "txtUsuarioA"
         Me.txtUsuarioA.Size = New System.Drawing.Size(286, 20)
         Me.txtUsuarioA.TabIndex = 16
@@ -81,7 +83,7 @@ Partial Class FormAgregar
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtPassword.Location = New System.Drawing.Point(12, 112)
+        Me.txtPassword.Location = New System.Drawing.Point(15, 129)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(286, 20)
         Me.txtPassword.TabIndex = 17
@@ -90,7 +92,7 @@ Partial Class FormAgregar
         'ComboBoxRol
         '
         Me.ComboBoxRol.FormattingEnabled = True
-        Me.ComboBoxRol.Location = New System.Drawing.Point(317, 66)
+        Me.ComboBoxRol.Location = New System.Drawing.Point(320, 95)
         Me.ComboBoxRol.Name = "ComboBoxRol"
         Me.ComboBoxRol.Size = New System.Drawing.Size(248, 21)
         Me.ComboBoxRol.TabIndex = 18
@@ -98,7 +100,7 @@ Partial Class FormAgregar
         'ComboBoxStatus
         '
         Me.ComboBoxStatus.FormattingEnabled = True
-        Me.ComboBoxStatus.Location = New System.Drawing.Point(317, 105)
+        Me.ComboBoxStatus.Location = New System.Drawing.Point(320, 144)
         Me.ComboBoxStatus.Name = "ComboBoxStatus"
         Me.ComboBoxStatus.Size = New System.Drawing.Size(248, 21)
         Me.ComboBoxStatus.TabIndex = 19
@@ -108,18 +110,18 @@ Partial Class FormAgregar
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(9, 35)
+        Me.Label3.Location = New System.Drawing.Point(12, 52)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(457, 13)
+        Me.Label3.Size = New System.Drawing.Size(307, 13)
         Me.Label3.TabIndex = 20
-        Me.Label3.Text = "___________________________________________________________________________"
+        Me.Label3.Text = "__________________________________________________"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(9, 86)
+        Me.Label1.Location = New System.Drawing.Point(12, 103)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(289, 13)
         Me.Label1.TabIndex = 21
@@ -130,11 +132,19 @@ Partial Class FormAgregar
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(9, 135)
+        Me.Label2.Location = New System.Drawing.Point(12, 152)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(289, 13)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "_______________________________________________"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(416, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(149, 74)
+        Me.PictureBox1.TabIndex = 34
+        Me.PictureBox1.TabStop = False
         '
         'FormAgregar
         '
@@ -142,6 +152,7 @@ Partial Class FormAgregar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(577, 236)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
@@ -155,6 +166,7 @@ Partial Class FormAgregar
         Me.Name = "FormAgregar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agregar Usuario "
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -169,4 +181,5 @@ Partial Class FormAgregar
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
