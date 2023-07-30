@@ -24,15 +24,17 @@ Partial Class FormAgregar
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAgregar))
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtUsuarioA = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.ComboBoxRol = New System.Windows.Forms.ComboBox()
         Me.ComboBoxStatus = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtApellidos = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtNombres = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,18 +54,6 @@ Partial Class FormAgregar
         Me.btnGuardar.TabIndex = 4
         Me.btnGuardar.Text = "Guardar Nuevo Usuario"
         Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'txtNombre
-        '
-        Me.txtNombre.BackColor = System.Drawing.Color.White
-        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtNombre.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.ForeColor = System.Drawing.Color.Black
-        Me.txtNombre.Location = New System.Drawing.Point(15, 29)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(304, 20)
-        Me.txtNombre.TabIndex = 15
-        Me.txtNombre.Text = "Nombre Completo"
         '
         'txtUsuarioA
         '
@@ -105,17 +95,6 @@ Partial Class FormAgregar
         Me.ComboBoxStatus.Size = New System.Drawing.Size(248, 21)
         Me.ComboBoxStatus.TabIndex = 19
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(12, 52)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(307, 13)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "__________________________________________________"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -140,11 +119,59 @@ Partial Class FormAgregar
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(416, 12)
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(471, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(149, 74)
+        Me.PictureBox1.Size = New System.Drawing.Size(94, 77)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 34
         Me.PictureBox1.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.ForeColor = System.Drawing.Color.DimGray
+        Me.Label4.Location = New System.Drawing.Point(261, 57)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(199, 13)
+        Me.Label4.TabIndex = 39
+        Me.Label4.Text = "________________________________"
+        '
+        'txtApellidos
+        '
+        Me.txtApellidos.BackColor = System.Drawing.Color.White
+        Me.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtApellidos.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtApellidos.ForeColor = System.Drawing.Color.Black
+        Me.txtApellidos.Location = New System.Drawing.Point(264, 34)
+        Me.txtApellidos.Name = "txtApellidos"
+        Me.txtApellidos.Size = New System.Drawing.Size(196, 20)
+        Me.txtApellidos.TabIndex = 38
+        Me.txtApellidos.Text = "Apellidos"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
+        Me.Label3.Location = New System.Drawing.Point(12, 57)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(223, 13)
+        Me.Label3.TabIndex = 37
+        Me.Label3.Text = "____________________________________"
+        '
+        'txtNombres
+        '
+        Me.txtNombres.BackColor = System.Drawing.Color.White
+        Me.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtNombres.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombres.ForeColor = System.Drawing.Color.Black
+        Me.txtNombres.Location = New System.Drawing.Point(15, 34)
+        Me.txtNombres.Name = "txtNombres"
+        Me.txtNombres.Size = New System.Drawing.Size(220, 20)
+        Me.txtNombres.TabIndex = 36
+        Me.txtNombres.Text = "Nombres"
         '
         'FormAgregar
         '
@@ -152,15 +179,17 @@ Partial Class FormAgregar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(577, 236)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtApellidos)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.txtNombres)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ComboBoxStatus)
         Me.Controls.Add(Me.ComboBoxRol)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsuarioA)
-        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.btnGuardar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormAgregar"
@@ -173,13 +202,15 @@ Partial Class FormAgregar
     End Sub
 
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents txtNombre As TextBox
     Friend WithEvents txtUsuarioA As TextBox
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents ComboBoxRol As ComboBox
     Friend WithEvents ComboBoxStatus As ComboBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtApellidos As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtNombres As TextBox
 End Class

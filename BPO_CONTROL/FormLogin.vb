@@ -1,4 +1,5 @@
-﻿Imports System.Threading
+﻿Imports System.Data.SqlClient
+Imports System.Threading
 
 Public Class FormLogin
     ' Propiedad para almacenar el nombre del usuario que ha iniciado sesión
@@ -19,50 +20,63 @@ Public Class FormLogin
     End Sub
 
     Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click
-        ' Aquí puedes implementar la lógica de autenticación para el inicio de sesión
-
-        ' Por ejemplo, supongamos que el usuario y contraseña son "admin" y "password"
+        ' Aquí vamos a implementar la lógica de autenticación para el inicio de sesión
         Dim usuario As String = txtUsuario.Text.Trim()
         Dim contraseña As String = txtContraseña.Text
 
-        If usuario = "admin" AndAlso contraseña = "password" Then
-            ' Inicio de sesión exitoso para el usuario administrativo
-            MessageBox.Show("Inicio de sesión exitoso como Administrador", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ' Realizamos la consulta a la base de datos para verificar si existe un usuario con los datos proporcionados
+        Dim connectionString As String = "Data Source=DESKTOP-U7VA4BS;Initial Catalog=BPOCONTROL;Integrated Security=True;"
+        Dim selectQuery As String = "SELECT COUNT(*) FROM Usuario WHERE NumeroCedula = @NumeroCedula AND Password = @Password;"
 
-            ' Abrir el formulario de administrador y pasar el nombre de usuario
-            Dim formAdministrador As New FormAdministrador(usuario)
-            formAdministrador.Show()
+        Using connection As New SqlConnection(connectionString)
+            connection.Open()
 
-            ' Luego, oculta el formulario de login actual
-            Me.Hide()
+            Using command As New SqlCommand(selectQuery, connection)
+                command.Parameters.Add("@NumeroCedula", SqlDbType.VarChar).Value = usuario
+                command.Parameters.Add("@Password", SqlDbType.VarChar).Value = contraseña
 
-        ElseIf usuario = "usuario" AndAlso contraseña = "password" Then
-            ' Inicio de sesión exitoso para el usuario normal
-            MessageBox.Show("Inicio de sesión exitoso como Usuario Normal", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' Ejecutamos la consulta y obtenemos el resultado (el número de filas coincidentes)
+                Dim result As Integer = CInt(command.ExecuteScalar())
 
-            ' Abrir el formulario de usuario normal y pasar el nombre de usuario
-            Dim formUsuario As New FormUsuario(usuario)
-            formUsuario.Show()
+                If result > 0 Then
+                    ' Inicio de sesión exitoso
+                    ' Guardamos el nombre de usuario para usarlo en el siguiente formulario (si es necesario)
+                    NombreUsuarioLogeado = usuario
 
-            Try
-                ' Intentar abrir Excel
-                Process.Start("excel.exe")
-            Catch ex As Exception
-                ' Si ocurre un error al abrir Excel, muestra un mensaje
-                MessageBox.Show("No se pudo abrir Excel: " & ex.Message, "Error al abrir Excel", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
+                    ' Mostramos un mensaje de inicio de sesión exitoso
+                    MessageBox.Show("Inicio de sesión exitoso para el usuario: " & usuario, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            ' Luego, oculta el formulario de login actual
-            Me.Hide()
-        Else
-            ' Inicio de sesión fallido, muestra un mensaje de error
-            MessageBox.Show("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    ' Luego, abrimos el siguiente formulario según el rol del usuario (administrador o usuario normal)
+                    Dim selectRoleQuery As String = "SELECT ID_Rol FROM Usuario WHERE NumeroCedula = @NumeroCedula;"
 
-            ' Limpia los cuadros de texto para que el usuario pueda intentar de nuevo
-            txtUsuario.Clear()
-            txtContraseña.Clear()
-            txtUsuario.Focus() ' Coloca el foco en el cuadro de texto de usuario para facilitar el siguiente intento
-        End If
+                    Using roleCommand As New SqlCommand(selectRoleQuery, connection)
+                        roleCommand.Parameters.Add("@NumeroCedula", SqlDbType.VarChar).Value = usuario
+                        Dim roleId As Integer = CInt(roleCommand.ExecuteScalar())
+
+                        If roleId = 1 Then
+                            ' Rol 1 corresponde al Administrador
+                            Dim formAdministrador As New FormAdministrador(usuario)
+                            formAdministrador.Show()
+                        ElseIf roleId = 2 Then
+                            ' Rol 2 corresponde al Usuario Normal
+                            Dim formUsuario As New FormUsuario(usuario)
+                            formUsuario.Show()
+                        End If
+                    End Using
+
+                    ' Luego, ocultamos el formulario de inicio de sesión actual
+                    Me.Hide()
+                Else
+                    ' Inicio de sesión fallido, mostramos un mensaje de error
+                    MessageBox.Show("Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                    ' Limpiamos los cuadros de texto para que el usuario pueda intentar de nuevo
+                    txtUsuario.Clear()
+                    txtContraseña.Clear()
+                    txtUsuario.Focus() ' Colocamos el foco en el cuadro de texto de usuario para facilitar el siguiente intento
+                End If
+            End Using
+        End Using
     End Sub
 
     ' Eventos Enter y Leave para los cuadros de texto de usuario y contraseña
@@ -102,6 +116,3 @@ Public Class FormLogin
         Application.Exit()
     End Sub
 End Class
-
-
-

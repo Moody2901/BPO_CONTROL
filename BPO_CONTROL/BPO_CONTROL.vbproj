@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion.vb" />
     <Compile Include="FormAdministrador.Designer.vb">
       <DependentUpon>FormAdministrador.vb</DependentUpon>
     </Compile>

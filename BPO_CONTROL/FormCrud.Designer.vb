@@ -24,14 +24,14 @@ Partial Class FormCrud
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCrud))
         Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DataGridViewUsuarios = New System.Windows.Forms.DataGridView()
+        Me.TextBoxBusqueda = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,29 +46,29 @@ Partial Class FormCrud
         Me.btnCerrarForm.TabIndex = 2
         Me.btnCerrarForm.TabStop = False
         '
-        'DataGridView1
+        'DataGridViewUsuarios
         '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.DataGridViewUsuarios.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 55)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(581, 383)
-        Me.DataGridView1.TabIndex = 8
+        Me.DataGridViewUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.DataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewUsuarios.Location = New System.Drawing.Point(12, 55)
+        Me.DataGridViewUsuarios.Name = "DataGridViewUsuarios"
+        Me.DataGridViewUsuarios.Size = New System.Drawing.Size(581, 383)
+        Me.DataGridViewUsuarios.TabIndex = 8
         '
-        'TextBox1
+        'TextBoxBusqueda
         '
-        Me.TextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.TextBoxBusqueda.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(12, 12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(535, 27)
-        Me.TextBox1.TabIndex = 9
+        Me.TextBoxBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxBusqueda.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxBusqueda.Location = New System.Drawing.Point(12, 12)
+        Me.TextBoxBusqueda.Name = "TextBoxBusqueda"
+        Me.TextBoxBusqueda.Size = New System.Drawing.Size(535, 27)
+        Me.TextBoxBusqueda.TabIndex = 9
         '
         'PictureBox1
         '
@@ -126,21 +126,21 @@ Partial Class FormCrud
         Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.TextBoxBusqueda)
+        Me.Controls.Add(Me.DataGridViewUsuarios)
         Me.Controls.Add(Me.btnCerrarForm)
         Me.Name = "FormCrud"
         Me.Text = "FormCrud"
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnCerrarForm As PictureBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents DataGridViewUsuarios As DataGridView
+    Friend WithEvents TextBoxBusqueda As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnEditar As Button
