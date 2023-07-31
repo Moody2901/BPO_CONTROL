@@ -22,34 +22,61 @@ Partial Class FormReporte
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormReporte))
-        Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
-        CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.components = New System.ComponentModel.Container()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.BPOCONTROLDataSet1 = New BPO_CONTROL.BPOCONTROLDataSet()
+        Me.ObtenerDatosUsuariosYRegistrosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ObtenerDatosUsuariosYRegistrosTableAdapter1 = New BPO_CONTROL.BPOCONTROLDataSetTableAdapters.ObtenerDatosUsuariosYRegistrosTableAdapter()
+        CType(Me.BPOCONTROLDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ObtenerDatosUsuariosYRegistrosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnCerrarForm
+        'ReportViewer1
         '
-        Me.btnCerrarForm.Image = CType(resources.GetObject("btnCerrarForm.Image"), System.Drawing.Image)
-        Me.btnCerrarForm.Location = New System.Drawing.Point(772, 12)
-        Me.btnCerrarForm.Name = "btnCerrarForm"
-        Me.btnCerrarForm.Size = New System.Drawing.Size(16, 16)
-        Me.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnCerrarForm.TabIndex = 3
-        Me.btnCerrarForm.TabStop = False
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource1.Name = "DataSet"
+        ReportDataSource1.Value = Me.ObtenerDatosUsuariosYRegistrosBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "BPO_CONTROL.Report.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
+        Me.ReportViewer1.TabIndex = 0
+        '
+        'BPOCONTROLDataSet1
+        '
+        Me.BPOCONTROLDataSet1.DataSetName = "BPOCONTROLDataSet"
+        Me.BPOCONTROLDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ObtenerDatosUsuariosYRegistrosBindingSource
+        '
+        Me.ObtenerDatosUsuariosYRegistrosBindingSource.DataMember = "ObtenerDatosUsuariosYRegistros"
+        Me.ObtenerDatosUsuariosYRegistrosBindingSource.DataSource = Me.BPOCONTROLDataSet1
+        '
+        'ObtenerDatosUsuariosYRegistrosTableAdapter1
+        '
+        Me.ObtenerDatosUsuariosYRegistrosTableAdapter1.ClearBeforeFill = True
         '
         'FormReporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btnCerrarForm)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FormReporte"
         Me.Text = "FormReporte"
-        CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BPOCONTROLDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ObtenerDatosUsuariosYRegistrosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnCerrarForm As PictureBox
+    Friend WithEvents BPOCONTROLDataSet As BPOCONTROLDataSet
+    Friend WithEvents ObtenerDatosUsuariosYRegistrosTableAdapter As BPOCONTROLDataSetTableAdapters.ObtenerDatosUsuariosYRegistrosTableAdapter
+    Friend WithEvents UsuarioTableAdapter As BPOCONTROLDataSetTableAdapters.UsuarioTableAdapter
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents BPOCONTROLDataSet1 As BPOCONTROLDataSet
+    Friend WithEvents ObtenerDatosUsuariosYRegistrosBindingSource As BindingSource
+    Friend WithEvents ObtenerDatosUsuariosYRegistrosTableAdapter1 As BPOCONTROLDataSetTableAdapters.ObtenerDatosUsuariosYRegistrosTableAdapter
 End Class
