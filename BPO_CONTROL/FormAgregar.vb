@@ -161,7 +161,7 @@ Public Class FormAgregar
         MessageBox.Show("Usuario agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ' Limpiar campos después de agregar el usuario
-        LimpiarCampos()
+        Me.Close()
     End Sub
 
     Private Sub FormAgregar_Load(sender As Object, e As EventArgs) Handles MyBase.Load

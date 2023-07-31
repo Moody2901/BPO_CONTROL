@@ -1,6 +1,18 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FormCrud
+
+    Private Sub CargarDatosDataGridViewUsuarios()
+        ' Obtener los datos de la tabla Usuario desde la base de datos
+        Dim dataTable As DataTable = ObtenerDatosUsuarios()
+
+        ' Asignar los datos al DataGridView
+        DataGridViewUsuarios.DataSource = dataTable
+
+        ' Ocultar la columna de ID_Rol para que no sea visible en el DataGridView
+        DataGridViewUsuarios.Columns("ID_Rol").Visible = False
+    End Sub
+
     Private formularioAgregar As FormAgregar ' Variable para almacenar la referencia al formulario FormAgregar
     Private formularioEditar As FormEditar ' Variable para almacenar la referencia al formulario FormEditar
 
@@ -53,6 +65,7 @@ Public Class FormCrud
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+
         ' Verificar si el formulario FormAgregar ya está abierto
         If formularioAgregar Is Nothing OrElse formularioAgregar.IsDisposed Then
             ' Si no está abierto, crear una nueva instancia y mostrarla
@@ -62,37 +75,7 @@ Public Class FormCrud
             ' Si ya está abierto, llevarlo al frente para asegurarse de que esté visible
             formularioAgregar.BringToFront()
         End If
-    End Sub
 
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        ' Verificar si el formulario FormEditar ya está abierto
-        If formularioEditar Is Nothing OrElse formularioEditar.IsDisposed Then
-            ' Si no está abierto, crear una nueva instancia y mostrarla
-            formularioEditar = New FormEditar()
-
-            ' Obtener los valores del registro seleccionado en el DataGridView
-            If DataGridViewUsuarios.SelectedRows.Count > 0 Then
-                Dim idUsuario As Integer = Convert.ToInt32(DataGridViewUsuarios.SelectedRows(0).Cells("ID_Usuario").Value)
-                Dim nombres As String = DataGridViewUsuarios.SelectedRows(0).Cells("Nombres").Value.ToString()
-                Dim apellidos As String = DataGridViewUsuarios.SelectedRows(0).Cells("Apellidos").Value.ToString()
-                Dim numeroCedula As String = DataGridViewUsuarios.SelectedRows(0).Cells("NumeroCedula").Value.ToString()
-                Dim password As String = DataGridViewUsuarios.SelectedRows(0).Cells("Password").Value.ToString()
-                Dim estado As Boolean = Convert.ToBoolean(DataGridViewUsuarios.SelectedRows(0).Cells("Estado").Value)
-                Dim idRol As Integer = Convert.ToInt32(DataGridViewUsuarios.SelectedRows(0).Cells("ID_Rol").Value)
-
-                ' Obtener la lista de nombres y IDs de los roles disponibles desde la base de datos
-                Dim rolesDisponibles As List(Of String) = ObtenerRoles()
-                Dim idRolesDisponibles As List(Of Integer) = ObtenerIDsRoles()
-
-                ' Pasar los valores del registro seleccionado, lista de roles y lista de IDs de roles disponibles al formulario FormEditar
-                formularioEditar.SetValores(idUsuario, nombres, apellidos, numeroCedula, password, estado, idRol, rolesDisponibles, idRolesDisponibles)
-            End If
-
-            formularioEditar.Show()
-        Else
-            ' Si ya está abierto, llevarlo al frente para asegurarse de que esté visible
-            formularioEditar.BringToFront()
-        End If
     End Sub
 
     Private Function ObtenerDatosUsuarios() As DataTable
@@ -119,6 +102,8 @@ Public Class FormCrud
 
         ' Ocultar la columna ID_Rol del DataGridView
         DataGridViewUsuarios.Columns("ID_Rol").Visible = False
+
+        CargarDatosDataGridViewUsuarios()
     End Sub
 
     Private Sub TextBoxBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TextBoxBusqueda.TextChanged
@@ -135,5 +120,103 @@ Public Class FormCrud
 
         ' Asignar los datos filtrados al DataGridView
         DataGridViewUsuarios.DataSource = dataTable
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        ' Verificar si hay alguna fila seleccionada en el DataGridView
+        If DataGridViewUsuarios.SelectedRows.Count > 0 Then
+            ' Obtener el ID del usuario seleccionado
+            Dim idUsuario As Integer = Convert.ToInt32(DataGridViewUsuarios.SelectedRows(0).Cells("ID_Usuario").Value)
+
+            ' Aquí debes implementar el código para eliminar el usuario con el ID especificado de la base de datos.
+            ' Puedes usar un DELETE para eliminar el usuario.
+
+            ' Supongamos que tienes una conexión abierta llamada 'connection', puedes usar un SqlCommand para eliminar el usuario.
+            ' Asegúrate de que el nombre de la columna en el comando DELETE coincida con el nombre de la tabla 'Usuario':
+            Dim query As String = "DELETE FROM Usuario WHERE ID_Usuario = @ID_Usuario"
+
+            Using connection As New SqlConnection("Data Source=DESKTOP-U7VA4BS;Initial Catalog=BPOCONTROL;Integrated Security=True")
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@ID_Usuario", idUsuario)
+
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+
+            ' Actualizar el DataGridView después de eliminar un usuario
+            CargarDatosDataGridViewUsuarios()
+
+            ' Mostrar mensaje de éxito
+            MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Por favor, selecciona un usuario para eliminar.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        ' Verificar si hay alguna fila seleccionada en el DataGridView
+        If DataGridViewUsuarios.SelectedRows.Count > 0 Then
+            ' Obtener el ID del usuario seleccionado
+            Dim idUsuario As Integer = Convert.ToInt32(DataGridViewUsuarios.SelectedRows(0).Cells("ID_Usuario").Value)
+
+            ' Obtener los datos del usuario seleccionado desde la base de datos
+            Dim usuarioSeleccionado As Usuario = ObtenerUsuarioPorID(idUsuario)
+
+            ' Verificar si el formulario FormEditar ya está abierto
+            If formularioEditar Is Nothing OrElse formularioEditar.IsDisposed Then
+                ' Si no está abierto, crear una nueva instancia y mostrarla
+                formularioEditar = New FormEditar()
+
+                ' Pasar los datos del usuario seleccionado al formulario FormEditar
+                formularioEditar.SetValores(usuarioSeleccionado)
+
+                formularioEditar.Show()
+            Else
+                ' Si ya está abierto, llevarlo al frente para asegurarse de que esté visible
+                formularioEditar.BringToFront()
+
+                ' Pasar los datos del usuario seleccionado al formulario FormEditar (en caso de que se haya abierto previamente pero se seleccione otro usuario)
+                formularioEditar.SetValores(usuarioSeleccionado)
+            End If
+        Else
+            MessageBox.Show("Por favor, selecciona un usuario para editar.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+    Private Function ObtenerUsuarioPorID(idUsuario As Integer) As Usuario
+        ' Aquí debes implementar el código para obtener los datos del usuario en base a su ID desde la base de datos.
+        ' Puedes realizar una consulta a la tabla 'Usuario' para obtener los datos del usuario con el ID especificado.
+
+        ' Supongamos que tienes una conexión abierta llamada 'connection', puedes usar un SqlCommand para obtener los datos del usuario.
+        ' Asegúrate de que los nombres de las columnas en la consulta coincidan con los nombres de la tabla 'Usuario':
+        Dim query As String = "SELECT Nombres, Apellidos, NumeroCedula, Password, Estado, ID_Rol FROM Usuario WHERE ID_Usuario = @ID_Usuario"
+        Dim usuario As New Usuario()
+
+        Using connection As New SqlConnection("Data Source=DESKTOP-U7VA4BS;Initial Catalog=BPOCONTROL;Integrated Security=True")
+            connection.Open()
+
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@ID_Usuario", idUsuario)
+
+                Using reader As SqlDataReader = command.ExecuteReader()
+                    If reader.Read() Then
+                        usuario.ID_Usuario = idUsuario
+                        usuario.Nombres = reader("Nombres").ToString()
+                        usuario.Apellidos = reader("Apellidos").ToString()
+                        usuario.NumeroCedula = reader("NumeroCedula").ToString()
+                        usuario.Password = reader("Password").ToString()
+                        usuario.Estado = Convert.ToBoolean(reader("Estado"))
+                        usuario.ID_Rol = Convert.ToInt32(reader("ID_Rol"))
+                    End If
+                End Using
+            End Using
+        End Using
+
+        Return usuario
+    End Function
+
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        CargarDatosDataGridViewUsuarios()
     End Sub
 End Class

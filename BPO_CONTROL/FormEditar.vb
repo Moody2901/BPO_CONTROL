@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FormEditar
+
     Private Sub txtNombres_Enter(sender As Object, e As EventArgs) Handles txtNombres.Enter
         If (txtNombres.Text = "Nombres") Then
             txtNombres.Text = ""
@@ -57,48 +58,43 @@ Public Class FormEditar
         End If
     End Sub
 
+    Private usuarioSeleccionado As Usuario
 
-    Private idUsuario As Integer
-    Private rolesDisponibles As List(Of String)
-    Private idRolesDisponibles As List(Of Integer)
-
-    Public Sub SetValores(idUsuario As Integer, nombres As String, apellidos As String, numeroCedula As String, password As String, estado As Boolean, idRol As Integer, rolesDisponibles As List(Of String), idRolesDisponibles As List(Of Integer))
-        Me.idUsuario = idUsuario
-        Me.rolesDisponibles = rolesDisponibles
-        Me.idRolesDisponibles = idRolesDisponibles
+    Public Sub SetValores(usuario As Usuario)
+        usuarioSeleccionado = usuario
 
         ' Asignar los valores a los componentes del formulario
-        txtNombres.Text = nombres
-        txtApellidos.Text = apellidos
-        txtUsuarioA.Text = numeroCedula
-        txtPassword.Text = password
-        ComboBoxStatus.SelectedIndex = If(estado, 0, 1)
-        ComboBoxRol.SelectedItem = rolesDisponibles.Find(Function(rol) ObtenerIDRol(rol) = idRol)
+        txtNombres.Text = usuario.Nombres
+        txtApellidos.Text = usuario.Apellidos
+        txtUsuarioA.Text = usuario.NumeroCedula
+        txtPassword.Text = usuario.Password
+        ComboBoxStatus.Text = If(usuario.Estado, "Activo", "Inactivo")
+        ComboBoxRol.SelectedItem = ObtenerNombreRolPorID(usuario.ID_Rol)
     End Sub
 
-    Private Function ObtenerIDRol(nombreRol As String) As Integer
-        ' Aquí debes implementar el código para obtener el ID_Rol en base al nombre del rol seleccionado en el ComboBox.
-        ' Puedes realizar una consulta a la base de datos para obtener el ID_Rol asociado al nombre del rol.
+    Private Function ObtenerNombreRolPorID(idRol As Integer) As String
+        ' Aquí debes implementar el código para obtener el nombre del rol en base a su ID desde la base de datos.
+        ' Puedes realizar una consulta a la tabla 'Roles' para obtener el nombre del rol con el ID especificado.
 
-        ' Por ejemplo, si tienes una conexión abierta llamada 'connection', puedes usar un SqlCommand para obtener el ID_Rol.
-        ' Supongamos que la columna 'ID_Rol' es de tipo INT en la tabla 'Roles' y que la tabla se llama 'Roles':
-        Dim query As String = "SELECT ID_Rol FROM Roles WHERE NombreRol = @NombreRol"
-        Dim idRol As Integer = -1 ' Valor predeterminado en caso de que no se encuentre el rol
+        ' Supongamos que tienes una conexión abierta llamada 'connection', puedes usar un SqlCommand para obtener el nombre del rol.
+        ' Asegúrate de que los nombres de las columnas en la consulta coincidan con los nombres de la tabla 'Roles':
+        Dim query As String = "SELECT Rol_Nombres FROM Roles WHERE ID_Rol = @ID_Rol"
+        Dim nombreRol As String = ""
 
         Using connection As New SqlConnection("Data Source=DESKTOP-U7VA4BS;Initial Catalog=BPOCONTROL;Integrated Security=True")
             connection.Open()
 
             Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@NombreRol", nombreRol)
+                command.Parameters.AddWithValue("@ID_Rol", idRol)
 
                 Dim result As Object = command.ExecuteScalar()
                 If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
-                    idRol = Convert.ToInt32(result)
+                    nombreRol = result.ToString()
                 End If
             End Using
         End Using
 
-        Return idRol
+        Return nombreRol
     End Function
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -117,12 +113,48 @@ Public Class FormEditar
             Return
         End If
 
+        ' Actualizar los datos del usuario en la base de datos
+        ActualizarUsuario(usuarioSeleccionado.ID_Usuario, nombres, apellidos, numeroCedula, password, estado, idRol)
+
+        ' Mostrar mensaje de éxito
+        MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        ' Cerrar el formulario después de guardar los cambios
+        Me.Close()
+    End Sub
+
+    Private Function ObtenerIDRol(nombreRol As String) As Integer
+        ' Aquí debes implementar el código para obtener el ID_Rol en base al nombre del rol seleccionado en el ComboBox.
+        ' Puedes realizar una consulta a la base de datos para obtener el ID_Rol asociado al nombre del rol.
+
+        ' Supongamos que tienes una conexión abierta llamada 'connection', puedes usar un SqlCommand para obtener el ID_Rol.
+        ' Supongamos que la columna 'ID_Rol' es de tipo INT en la tabla 'Roles' y que la tabla se llama 'Roles':
+        Dim query As String = "SELECT ID_Rol FROM Roles WHERE Rol_Nombres = @NombreRol"
+        Dim idRol As Integer = -1 ' Valor predeterminado en caso de que no se encuentre el rol
+
+        Using connection As New SqlConnection("Data Source=DESKTOP-U7VA4BS;Initial Catalog=BPOCONTROL;Integrated Security=True")
+            connection.Open()
+
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@NombreRol", nombreRol)
+
+                Dim result As Object = command.ExecuteScalar()
+                If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                    idRol = Convert.ToInt32(result)
+                End If
+            End Using
+        End Using
+
+        Return idRol
+    End Function
+
+    Private Sub ActualizarUsuario(idUsuario As Integer, nombres As String, apellidos As String, numeroCedula As String, password As String, estado As Boolean, idRol As Integer)
         ' Aquí debes implementar el código para actualizar el usuario en la base de datos.
         ' Puedes usar un UPDATE para modificar los datos del usuario.
 
         ' Supongamos que tienes una conexión abierta llamada 'connection', puedes usar un SqlCommand para actualizar los datos.
         ' Asegúrate de que los nombres de las columnas en el comando UPDATE coincidan con los nombres de la tabla 'Usuarios':
-        Dim query As String = "UPDATE Usuarios SET Nombres = @Nombres, Apellidos = @Apellidos, NumeroCedula = @NumeroCedula, [Password] = @Password, Estado = @Estado, ID_Rol = @ID_Rol WHERE ID_Usuario = @ID_Usuario"
+        Dim query As String = "UPDATE Usuario SET Nombres = @Nombres, Apellidos = @Apellidos, NumeroCedula = @NumeroCedula, [Password] = @Password, Estado = @Estado, ID_Rol = @ID_Rol WHERE ID_Usuario = @ID_Usuario"
 
         Using connection As New SqlConnection("Data Source=DESKTOP-U7VA4BS;Initial Catalog=BPOCONTROL;Integrated Security=True")
             connection.Open()
@@ -139,12 +171,46 @@ Public Class FormEditar
                 command.ExecuteNonQuery()
             End Using
         End Using
-
-        ' Mostrar mensaje de éxito
-        MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        ' Cerrar el formulario después de guardar los cambios
-        Me.Close()
     End Sub
 
+    Private Sub FormEditar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Cargar los datos en ComboBoxStatus
+        ComboBoxStatus.Items.Add("Activo")
+        ComboBoxStatus.Items.Add("Inactivo")
+
+        ' Cargar los roles disponibles en ComboBoxRol
+        Dim rolesDisponibles As List(Of String) = ObtenerRoles()
+        For Each rol As String In rolesDisponibles
+            ComboBoxRol.Items.Add(rol)
+        Next
+    End Sub
+
+    Private Function ObtenerRoles() As List(Of String)
+        Dim roles As New List(Of String)()
+
+        Using connection As New SqlConnection("Data Source=DESKTOP-U7VA4BS;Initial Catalog=BPOCONTROL;Integrated Security=True")
+            connection.Open()
+
+            Dim query As String = "SELECT Rol_Nombres FROM Roles"
+            Using command As New SqlCommand(query, connection)
+                Using reader As SqlDataReader = command.ExecuteReader()
+                    While reader.Read()
+                        roles.Add(reader("Rol_Nombres").ToString())
+                    End While
+                End Using
+            End Using
+        End Using
+
+        Return roles
+    End Function
+End Class
+
+Public Class Usuario
+    Public Property ID_Usuario As Integer
+    Public Property Nombres As String
+    Public Property Apellidos As String
+    Public Property NumeroCedula As String
+    Public Property Password As String
+    Public Property Estado As Boolean
+    Public Property ID_Rol As Integer
 End Class
