@@ -7,23 +7,27 @@ Public Class FormUsuario
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    ' Variables para almacenar los datos del usuario
+    Private _nombreUsuarioLogeado As String
+    Private _nombresUsuario As String
+    Private _apellidosUsuario As String
 
-    Private nombreUsuario As String
-
-
-    Public Sub New(ByVal nombreUsuario As String)
+    ' Constructor que recibe los datos del usuario
+    Public Sub New(nombreUsuario As String, nombres As String, apellidos As String)
         InitializeComponent()
-        Me.nombreUsuario = nombreUsuario
+
+        ' Guardar los datos del usuario en las variables privadas
+        _nombreUsuarioLogeado = nombreUsuario
+        _nombresUsuario = nombres
+        _apellidosUsuario = apellidos
     End Sub
+
 
     Private cronometro As New Stopwatch()
 
     Private Sub FormUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-        ' Mostrar el nombre de usuario en una etiqueta dentro de un panel
-        LabelUsuario.Text = "Bienvenido, " & nombreUsuario & "!"
-
+        ' Mostrar el nombre y apellidos del usuario en las etiquetas correspondientes
+        LabelUsuario.Text = "Bienvenido, " & _nombresUsuario & " " & _apellidosUsuario & "!"
 
         ' Iniciar el Timer para actualizar la hora cada segundo
         Timer1.Interval = 1000 ' Intervalo de actualización en milisegundos (1000 ms = 1 segundo)
@@ -104,5 +108,6 @@ Public Class FormUsuario
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
         Application.Exit()
     End Sub
+
 
 End Class

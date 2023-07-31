@@ -28,9 +28,9 @@ Partial Class FormUsuario
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.LabelUsuario = New System.Windows.Forms.Label()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.LabelHora = New System.Windows.Forms.Label()
-        Me.LabelUsuario = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LabelCronometro = New System.Windows.Forms.Label()
@@ -83,15 +83,26 @@ Partial Class FormUsuario
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.LabelUsuario)
         Me.Panel3.Controls.Add(Me.btnCerrarSesion)
         Me.Panel3.Controls.Add(Me.LabelHora)
-        Me.Panel3.Controls.Add(Me.LabelUsuario)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(200, 410)
         Me.Panel3.TabIndex = 5
+        '
+        'LabelUsuario
+        '
+        Me.LabelUsuario.AutoSize = True
+        Me.LabelUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUsuario.ForeColor = System.Drawing.SystemColors.Control
+        Me.LabelUsuario.Location = New System.Drawing.Point(82, 17)
+        Me.LabelUsuario.Name = "LabelUsuario"
+        Me.LabelUsuario.Size = New System.Drawing.Size(50, 16)
+        Me.LabelUsuario.TabIndex = 12
+        Me.LabelUsuario.Text = "Label1"
         '
         'btnCerrarSesion
         '
@@ -121,17 +132,6 @@ Partial Class FormUsuario
         Me.LabelHora.Size = New System.Drawing.Size(79, 25)
         Me.LabelHora.TabIndex = 10
         Me.LabelHora.Text = "Label2"
-        '
-        'LabelUsuario
-        '
-        Me.LabelUsuario.AutoSize = True
-        Me.LabelUsuario.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelUsuario.ForeColor = System.Drawing.SystemColors.Control
-        Me.LabelUsuario.Location = New System.Drawing.Point(82, 36)
-        Me.LabelUsuario.Name = "LabelUsuario"
-        Me.LabelUsuario.Size = New System.Drawing.Size(42, 15)
-        Me.LabelUsuario.TabIndex = 2
-        Me.LabelUsuario.Text = "Label1"
         '
         'PictureBox2
         '
@@ -263,7 +263,6 @@ Partial Class FormUsuario
     Friend WithEvents btnMinimizar As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents LabelUsuario As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents LabelHora As Label
     Friend WithEvents Timer1 As Timer
@@ -275,4 +274,5 @@ Partial Class FormUsuario
     Friend WithEvents btnRestaurarTimer As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents SissaLogo As PictureBox
+    Friend WithEvents LabelUsuario As Label
 End Class

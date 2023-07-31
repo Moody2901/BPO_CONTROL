@@ -128,19 +128,31 @@ Public Class FormAdministrador
         FormLogin.Show()
     End Sub
 
-    ' Variable para almacenar el nombre del usuario.
-    Private nombreUsuario As String
 
-    ' Constructor para recibir el nombre del usuario al iniciar el formulario.
-    Public Sub New(ByVal nombreUsuario As String)
+
+    ' Variables para almacenar los datos del usuario
+    Private _nombreUsuarioLogeado As String
+    Private _nombresUsuario As String
+    Private _apellidosUsuario As String
+
+    ' Constructor que recibe los datos del usuario
+    Public Sub New(nombreUsuario As String, nombres As String, apellidos As String)
         InitializeComponent()
-        Me.nombreUsuario = nombreUsuario
+
+        ' Guardar los datos del usuario en las variables privadas
+        _nombreUsuarioLogeado = nombreUsuario
+        _nombresUsuario = nombres
+        _apellidosUsuario = apellidos
     End Sub
 
     ' Evento Load del formulario para mostrar el nombre de usuario en una etiqueta dentro de un panel.
     Private Sub FormAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LabelUsuario.Text = "Bienvenido, " & nombreUsuario & "!" ' Mostrar el nombre de usuario en el panel.
+        ' Mostrar el nombre y apellidos del usuario en las etiquetas correspondientes
+        LabelUsuario.Text = "Bienvenido, " & _nombresUsuario & " " & _apellidosUsuario & "!"
     End Sub
+
+
+
 
     ' Evento Click del botón "Usuario" para abrir el formulario FormCrud en el panel de contenido.
     Private Sub btnUsuario_Click(sender As Object, e As EventArgs) Handles btnUsuario.Click
