@@ -100,11 +100,11 @@ Partial Class FormUsuario
         'LabelUsuario
         '
         Me.LabelUsuario.AutoSize = True
-        Me.LabelUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUsuario.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelUsuario.ForeColor = System.Drawing.SystemColors.Control
         Me.LabelUsuario.Location = New System.Drawing.Point(82, 17)
         Me.LabelUsuario.Name = "LabelUsuario"
-        Me.LabelUsuario.Size = New System.Drawing.Size(50, 16)
+        Me.LabelUsuario.Size = New System.Drawing.Size(57, 18)
         Me.LabelUsuario.TabIndex = 12
         Me.LabelUsuario.Text = "Label1"
         '
@@ -235,7 +235,7 @@ Partial Class FormUsuario
         Me.Labelnombres.AutoSize = True
         Me.Labelnombres.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Labelnombres.ForeColor = System.Drawing.SystemColors.Control
-        Me.Labelnombres.Location = New System.Drawing.Point(82, 33)
+        Me.Labelnombres.Location = New System.Drawing.Point(82, 48)
         Me.Labelnombres.Name = "Labelnombres"
         Me.Labelnombres.Size = New System.Drawing.Size(46, 16)
         Me.Labelnombres.TabIndex = 13

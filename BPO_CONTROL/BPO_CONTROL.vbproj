@@ -91,11 +91,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BPOCONTROLDataSet3.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BPOCONTROLDataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Conexion.vb" />
     <Compile Include="FormAdministrador.Designer.vb">
       <DependentUpon>FormAdministrador.vb</DependentUpon>
@@ -178,9 +173,6 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReporte.resx">
-      <DependentUpon>FormReporte.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTareas.resx">
       <DependentUpon>FormTareas.vb</DependentUpon>
     </EmbeddedResource>
@@ -193,20 +185,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="BPOCONTROLDataSet3.xsc">
-      <DependentUpon>BPOCONTROLDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="BPOCONTROLDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BPOCONTROLDataSet3.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BPOCONTROLDataSet3.xss">
-      <DependentUpon>BPOCONTROLDataSet3.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
