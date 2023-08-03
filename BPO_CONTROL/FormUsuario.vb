@@ -1,25 +1,21 @@
-﻿Imports System.Threading
+﻿Imports System.Data.SqlClient
+Imports System.Threading
 
 
 Public Class FormUsuario
 
-    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
-        Me.WindowState = FormWindowState.Minimized
+    Private ReadOnly nombreUsuario As String
+    Private NombresUsuario As String
+    Private ApellidosUsuario As String
+
+    Public Sub New(ByVal nombreUsuario As String)
+        InitializeComponent()
+        Me.nombreUsuario = nombreUsuario
+        ObtenerNombreYApellidos()
     End Sub
 
-    ' Variables para almacenar los datos del usuario
-    Private _nombreUsuarioLogeado As String
-    Private _nombresUsuario As String
-    Private _apellidosUsuario As String
-
-    ' Constructor que recibe los datos del usuario
-    Public Sub New(nombreUsuario As String, nombres As String, apellidos As String)
-        InitializeComponent()
-
-        ' Guardar los datos del usuario en las variables privadas
-        _nombreUsuarioLogeado = nombreUsuario
-        _nombresUsuario = nombres
-        _apellidosUsuario = apellidos
+    Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 
 
@@ -27,7 +23,9 @@ Public Class FormUsuario
 
     Private Sub FormUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Mostrar el nombre y apellidos del usuario en las etiquetas correspondientes
-        LabelUsuario.Text = "Bienvenido, " & _nombresUsuario & " " & _apellidosUsuario & "!"
+        LabelUsuario.Text = "Bienvenido"  
+        Labelnombres.Text = NombresUsuario
+        Labelapellidos.Text = ApellidosUsuario
 
         ' Iniciar el Timer para actualizar la hora cada segundo
         Timer1.Interval = 1000 ' Intervalo de actualización en milisegundos (1000 ms = 1 segundo)
@@ -107,6 +105,26 @@ Public Class FormUsuario
 
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
         Application.Exit()
+    End Sub
+
+    Private Sub ObtenerNombreYApellidos()
+        ' Realizar consulta para obtener nombres y apellidos del usuario
+        Dim connectionString As String = "Data Source=DESKTOP-U7VA4BS;Initial Catalog=BPOCONTROL;Integrated Security=True;"
+        Dim selectNameQuery As String = "SELECT Nombres, Apellidos FROM Usuario WHERE NumeroCedula = @NumeroCedula;"
+
+        Using connection As New SqlConnection(connectionString)
+            connection.Open()
+
+            Using nameCommand As New SqlCommand(selectNameQuery, connection)
+                nameCommand.Parameters.Add("@NumeroCedula", SqlDbType.VarChar).Value = nombreUsuario
+                Using reader As SqlDataReader = nameCommand.ExecuteReader()
+                    If reader.Read() Then
+                        NombresUsuario = reader("Nombres").ToString()
+                        ApellidosUsuario = reader("Apellidos").ToString()
+                    End If
+                End Using
+            End Using
+        End Using
     End Sub
 
 

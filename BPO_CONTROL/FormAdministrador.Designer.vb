@@ -38,6 +38,8 @@ Partial Class FormAdministrador
         Me.btnMaximizar = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
+        Me.Labelnombres = New System.Windows.Forms.Label()
+        Me.Labelapellidos = New System.Windows.Forms.Label()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelForm.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,6 +105,8 @@ Partial Class FormAdministrador
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Labelapellidos)
+        Me.Panel1.Controls.Add(Me.Labelnombres)
         Me.Panel1.Controls.Add(Me.LabelUsuario)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -241,6 +245,28 @@ Partial Class FormAdministrador
         Me.btnCerrar.TabIndex = 0
         Me.btnCerrar.TabStop = False
         '
+        'Labelnombres
+        '
+        Me.Labelnombres.AutoSize = True
+        Me.Labelnombres.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labelnombres.ForeColor = System.Drawing.SystemColors.Control
+        Me.Labelnombres.Location = New System.Drawing.Point(82, 32)
+        Me.Labelnombres.Name = "Labelnombres"
+        Me.Labelnombres.Size = New System.Drawing.Size(50, 16)
+        Me.Labelnombres.TabIndex = 3
+        Me.Labelnombres.Text = "Label1"
+        '
+        'Labelapellidos
+        '
+        Me.Labelapellidos.AutoSize = True
+        Me.Labelapellidos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labelapellidos.ForeColor = System.Drawing.SystemColors.Control
+        Me.Labelapellidos.Location = New System.Drawing.Point(82, 64)
+        Me.Labelapellidos.Name = "Labelapellidos"
+        Me.Labelapellidos.Size = New System.Drawing.Size(50, 16)
+        Me.Labelapellidos.TabIndex = 4
+        Me.Labelapellidos.Text = "Label1"
+        '
         'FormAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -285,4 +311,6 @@ Partial Class FormAdministrador
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LabelUsuario As Label
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Labelapellidos As Label
+    Friend WithEvents Labelnombres As Label
 End Class

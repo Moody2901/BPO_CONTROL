@@ -103,8 +103,8 @@ Public Class FormLogin
                             formAdministrador.Show()
                         ElseIf roleId = 2 Then
                             ' Rol 2 corresponde al Usuario Normal
-                            Dim formUsuario As New FormUsuario(NombreUsuarioLogeado, NombresUsuario, ApellidosUsuario)
-                            formUsuario.Show()
+                            Dim formTareas As New FormTareas(NombreUsuarioLogeado)
+                            formTareas.Show()
                         End If
                     End Using
 

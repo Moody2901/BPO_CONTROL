@@ -40,6 +40,8 @@ Partial Class FormUsuario
         Me.btnRestaurarTimer = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SissaLogo = New System.Windows.Forms.PictureBox()
+        Me.Labelnombres = New System.Windows.Forms.Label()
+        Me.Labelapellidos = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -83,6 +85,8 @@ Partial Class FormUsuario
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Labelapellidos)
+        Me.Panel3.Controls.Add(Me.Labelnombres)
         Me.Panel3.Controls.Add(Me.LabelUsuario)
         Me.Panel3.Controls.Add(Me.btnCerrarSesion)
         Me.Panel3.Controls.Add(Me.LabelHora)
@@ -226,6 +230,28 @@ Partial Class FormUsuario
         Me.SissaLogo.TabStop = False
         Me.SissaLogo.Visible = False
         '
+        'Labelnombres
+        '
+        Me.Labelnombres.AutoSize = True
+        Me.Labelnombres.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labelnombres.ForeColor = System.Drawing.SystemColors.Control
+        Me.Labelnombres.Location = New System.Drawing.Point(82, 33)
+        Me.Labelnombres.Name = "Labelnombres"
+        Me.Labelnombres.Size = New System.Drawing.Size(46, 16)
+        Me.Labelnombres.TabIndex = 13
+        Me.Labelnombres.Text = "Label1"
+        '
+        'Labelapellidos
+        '
+        Me.Labelapellidos.AutoSize = True
+        Me.Labelapellidos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labelapellidos.ForeColor = System.Drawing.SystemColors.Control
+        Me.Labelapellidos.Location = New System.Drawing.Point(82, 64)
+        Me.Labelapellidos.Name = "Labelapellidos"
+        Me.Labelapellidos.Size = New System.Drawing.Size(46, 16)
+        Me.Labelapellidos.TabIndex = 14
+        Me.Labelapellidos.Text = "Label1"
+        '
         'FormUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -275,4 +301,6 @@ Partial Class FormUsuario
     Friend WithEvents Label1 As Label
     Friend WithEvents SissaLogo As PictureBox
     Friend WithEvents LabelUsuario As Label
+    Friend WithEvents Labelapellidos As Label
+    Friend WithEvents Labelnombres As Label
 End Class

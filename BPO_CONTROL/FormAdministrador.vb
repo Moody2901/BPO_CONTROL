@@ -148,7 +148,9 @@ Public Class FormAdministrador
     ' Evento Load del formulario para mostrar el nombre de usuario en una etiqueta dentro de un panel.
     Private Sub FormAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Mostrar el nombre y apellidos del usuario en las etiquetas correspondientes
-        LabelUsuario.Text = "Bienvenido, " & _nombresUsuario & " " & _apellidosUsuario & "!"
+        LabelUsuario.Text = "Bienvenido, "
+        Labelnombres.Text = _nombresUsuario
+        Labelapellidos.Text = _apellidosUsuario
     End Sub
 
 
