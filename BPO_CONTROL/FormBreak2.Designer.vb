@@ -62,9 +62,9 @@ Partial Class FormBreak2
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(127, 30)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(345, 25)
+        Me.Label1.Size = New System.Drawing.Size(324, 25)
         Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Tiempo estimado en el Almuerzo"
+        Me.Label1.Text = "Tiempo estimado en el Break 2"
         '
         'btnRestaurarTimer
         '
