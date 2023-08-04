@@ -2,6 +2,23 @@
 
 Public Class FormAdministrador
 
+    Private Sub hideSubmenu()
+
+        PanelReporteSubmenu.Visible = False
+
+    End Sub
+
+    Private Sub showSubmenu(submenu As Panel)
+
+        If submenu.Visible = False Then
+            hideSubmenu()
+            submenu.Visible = True
+        Else
+            submenu.Visible = False
+        End If
+
+    End Sub
+
 #Region "Funcionalidad del Formulario"
 
     ' Método para permitir el redimensionamiento del formulario desde la esquina inferior derecha.
@@ -115,8 +132,7 @@ Public Class FormAdministrador
 
     ' Evento Click del botón "Reporte" para abrir el formulario FormReporte en el panel de contenido.
     Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
-        AbrirFormEnPanel(Of FormReporte)()
-        btnReporte.BackColor = Color.FromArgb(12, 61, 92)
+        showSubmenu(PanelReporteSubmenu)
     End Sub
 
     ' Evento Click del botón "Cerrar Sesión" para cerrar el formulario actual y mostrar el formulario de login (FormLogin).
@@ -151,15 +167,28 @@ Public Class FormAdministrador
         LabelUsuario.Text = "Bienvenido, "
         Labelnombres.Text = _nombresUsuario
         Labelapellidos.Text = _apellidosUsuario
+
+
+        hideSubmenu()
     End Sub
 
+    Private Sub btnReporteConsolidado_Click(sender As Object, e As EventArgs) Handles btnReporteConsolidado.Click
+        btnReporteConsolidado.BackColor = SystemColors.Control
+    End Sub
 
+    Private Sub btnReporteEntradaSalida_Click(sender As Object, e As EventArgs) Handles btnReporteEntradaSalida.Click
+        btnReporteEntradaSalida.BackColor = SystemColors.Control
+    End Sub
+
+    Private Sub btnReporteHorasConsumidas_Click(sender As Object, e As EventArgs) Handles btnReporteHorasConsumidas.Click
+        btnReporteHorasConsumidas.BackColor = SystemColors.Control
+    End Sub
 
 
     ' Evento Click del botón "Usuario" para abrir el formulario FormCrud en el panel de contenido.
     Private Sub btnUsuario_Click(sender As Object, e As EventArgs) Handles btnUsuario.Click
         AbrirFormEnPanel(Of FormCrud)()
-        btnUsuario.BackColor = Color.FromArgb(12, 61, 92)
+
     End Sub
 
     ' Método para cerrar los formularios del panel y restablecer el color de los botones correspondientes.

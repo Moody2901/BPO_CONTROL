@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormUsuario
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormUsuario
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUsuario))
@@ -28,10 +28,12 @@ Partial Class FormUsuario
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnCena = New System.Windows.Forms.Button()
-        Me.btnBreak2 = New System.Windows.Forms.Button()
-        Me.btnAlmuerzo = New System.Windows.Forms.Button()
+        Me.btnDescanso = New System.Windows.Forms.Button()
+        Me.PanelReporteSubmenu = New System.Windows.Forms.Panel()
         Me.btnBreak1 = New System.Windows.Forms.Button()
+        Me.btnCena = New System.Windows.Forms.Button()
+        Me.btnAlmuerzo = New System.Windows.Forms.Button()
+        Me.btnBreak2 = New System.Windows.Forms.Button()
         Me.Labelapellidos = New System.Windows.Forms.Label()
         Me.Labelnombres = New System.Windows.Forms.Label()
         Me.LabelUsuario = New System.Windows.Forms.Label()
@@ -45,6 +47,7 @@ Partial Class FormUsuario
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.PanelReporteSubmenu.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelForm.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,10 +86,8 @@ Partial Class FormUsuario
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.btnCena)
-        Me.Panel3.Controls.Add(Me.btnBreak2)
-        Me.Panel3.Controls.Add(Me.btnAlmuerzo)
-        Me.Panel3.Controls.Add(Me.btnBreak1)
+        Me.Panel3.Controls.Add(Me.btnDescanso)
+        Me.Panel3.Controls.Add(Me.PanelReporteSubmenu)
         Me.Panel3.Controls.Add(Me.Labelapellidos)
         Me.Panel3.Controls.Add(Me.Labelnombres)
         Me.Panel3.Controls.Add(Me.LabelUsuario)
@@ -99,73 +100,102 @@ Partial Class FormUsuario
         Me.Panel3.Size = New System.Drawing.Size(200, 410)
         Me.Panel3.TabIndex = 5
         '
+        'btnDescanso
+        '
+        Me.btnDescanso.FlatAppearance.BorderSize = 0
+        Me.btnDescanso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnDescanso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnDescanso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDescanso.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDescanso.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnDescanso.Image = CType(resources.GetObject("btnDescanso.Image"), System.Drawing.Image)
+        Me.btnDescanso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDescanso.Location = New System.Drawing.Point(3, 129)
+        Me.btnDescanso.Name = "btnDescanso"
+        Me.btnDescanso.Size = New System.Drawing.Size(194, 41)
+        Me.btnDescanso.TabIndex = 19
+        Me.btnDescanso.Text = "DESCANSO"
+        Me.btnDescanso.UseVisualStyleBackColor = True
+        '
+        'PanelReporteSubmenu
+        '
+        Me.PanelReporteSubmenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.PanelReporteSubmenu.Controls.Add(Me.btnBreak1)
+        Me.PanelReporteSubmenu.Controls.Add(Me.btnCena)
+        Me.PanelReporteSubmenu.Controls.Add(Me.btnAlmuerzo)
+        Me.PanelReporteSubmenu.Controls.Add(Me.btnBreak2)
+        Me.PanelReporteSubmenu.Location = New System.Drawing.Point(3, 176)
+        Me.PanelReporteSubmenu.Name = "PanelReporteSubmenu"
+        Me.PanelReporteSubmenu.Size = New System.Drawing.Size(194, 178)
+        Me.PanelReporteSubmenu.TabIndex = 15
+        '
+        'btnBreak1
+        '
+        Me.btnBreak1.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnBreak1.FlatAppearance.BorderSize = 0
+        Me.btnBreak1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnBreak1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
+        Me.btnBreak1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBreak1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBreak1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.btnBreak1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBreak1.Location = New System.Drawing.Point(0, 0)
+        Me.btnBreak1.Name = "btnBreak1"
+        Me.btnBreak1.Size = New System.Drawing.Size(194, 41)
+        Me.btnBreak1.TabIndex = 15
+        Me.btnBreak1.Text = "BREAK 1"
+        Me.btnBreak1.UseVisualStyleBackColor = False
+        '
         'btnCena
         '
+        Me.btnCena.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.btnCena.FlatAppearance.BorderSize = 0
-        Me.btnCena.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnCena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.btnCena.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCena.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnCena.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
+        Me.btnCena.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCena.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCena.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnCena.Image = CType(resources.GetObject("btnCena.Image"), System.Drawing.Image)
+        Me.btnCena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(182, Byte), Integer))
         Me.btnCena.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCena.Location = New System.Drawing.Point(3, 254)
+        Me.btnCena.Location = New System.Drawing.Point(0, 135)
         Me.btnCena.Name = "btnCena"
         Me.btnCena.Size = New System.Drawing.Size(194, 38)
         Me.btnCena.TabIndex = 18
         Me.btnCena.Text = "CENA"
-        Me.btnCena.UseVisualStyleBackColor = True
-        '
-        'btnBreak2
-        '
-        Me.btnBreak2.FlatAppearance.BorderSize = 0
-        Me.btnBreak2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnBreak2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.btnBreak2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBreak2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBreak2.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnBreak2.Image = CType(resources.GetObject("btnBreak2.Image"), System.Drawing.Image)
-        Me.btnBreak2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBreak2.Location = New System.Drawing.Point(3, 210)
-        Me.btnBreak2.Name = "btnBreak2"
-        Me.btnBreak2.Size = New System.Drawing.Size(194, 38)
-        Me.btnBreak2.TabIndex = 17
-        Me.btnBreak2.Text = "BREAK 2"
-        Me.btnBreak2.UseVisualStyleBackColor = True
+        Me.btnCena.UseVisualStyleBackColor = False
         '
         'btnAlmuerzo
         '
+        Me.btnAlmuerzo.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.btnAlmuerzo.FlatAppearance.BorderSize = 0
-        Me.btnAlmuerzo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnAlmuerzo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.btnAlmuerzo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAlmuerzo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnAlmuerzo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
+        Me.btnAlmuerzo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlmuerzo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAlmuerzo.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnAlmuerzo.Image = CType(resources.GetObject("btnAlmuerzo.Image"), System.Drawing.Image)
+        Me.btnAlmuerzo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(182, Byte), Integer))
         Me.btnAlmuerzo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAlmuerzo.Location = New System.Drawing.Point(3, 166)
+        Me.btnAlmuerzo.Location = New System.Drawing.Point(0, 47)
         Me.btnAlmuerzo.Name = "btnAlmuerzo"
         Me.btnAlmuerzo.Size = New System.Drawing.Size(194, 38)
         Me.btnAlmuerzo.TabIndex = 16
         Me.btnAlmuerzo.Text = "ALMUERZO"
-        Me.btnAlmuerzo.UseVisualStyleBackColor = True
+        Me.btnAlmuerzo.UseVisualStyleBackColor = False
         '
-        'btnBreak1
+        'btnBreak2
         '
-        Me.btnBreak1.FlatAppearance.BorderSize = 0
-        Me.btnBreak1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnBreak1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.btnBreak1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBreak1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBreak1.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnBreak1.Image = CType(resources.GetObject("btnBreak1.Image"), System.Drawing.Image)
-        Me.btnBreak1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBreak1.Location = New System.Drawing.Point(3, 122)
-        Me.btnBreak1.Name = "btnBreak1"
-        Me.btnBreak1.Size = New System.Drawing.Size(194, 38)
-        Me.btnBreak1.TabIndex = 15
-        Me.btnBreak1.Text = "BREAK 1"
-        Me.btnBreak1.UseVisualStyleBackColor = True
+        Me.btnBreak2.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnBreak2.FlatAppearance.BorderSize = 0
+        Me.btnBreak2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnBreak2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
+        Me.btnBreak2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBreak2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBreak2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.btnBreak2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBreak2.Location = New System.Drawing.Point(0, 91)
+        Me.btnBreak2.Name = "btnBreak2"
+        Me.btnBreak2.Size = New System.Drawing.Size(194, 38)
+        Me.btnBreak2.TabIndex = 17
+        Me.btnBreak2.Text = "BREAK 2"
+        Me.btnBreak2.UseVisualStyleBackColor = False
         '
         'Labelapellidos
         '
@@ -211,7 +241,7 @@ Partial Class FormUsuario
         Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.Control
         Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
         Me.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(3, 360)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(3, 369)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(194, 38)
         Me.btnCerrarSesion.TabIndex = 11
@@ -282,6 +312,7 @@ Partial Class FormUsuario
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.PanelReporteSubmenu.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelForm.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -306,4 +337,6 @@ Partial Class FormUsuario
     Friend WithEvents btnBreak1 As Button
     Friend WithEvents PanelForm As Panel
     Friend WithEvents PictureBox1 As PictureBox
+    Private WithEvents PanelReporteSubmenu As Panel
+    Friend WithEvents btnDescanso As Button
 End Class

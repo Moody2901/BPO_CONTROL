@@ -27,7 +27,13 @@ Partial Class FormAdministrador
         Me.PanelForm = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.PanelReporteSubmenu = New System.Windows.Forms.Panel()
+        Me.btnReporteHorasConsumidas = New System.Windows.Forms.Button()
+        Me.btnReporteEntradaSalida = New System.Windows.Forms.Button()
+        Me.btnReporteConsolidado = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Labelapellidos = New System.Windows.Forms.Label()
+        Me.Labelnombres = New System.Windows.Forms.Label()
         Me.LabelUsuario = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
@@ -38,12 +44,11 @@ Partial Class FormAdministrador
         Me.btnMaximizar = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.Labelnombres = New System.Windows.Forms.Label()
-        Me.Labelapellidos = New System.Windows.Forms.Label()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelForm.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelMenu.SuspendLayout()
+        Me.PanelReporteSubmenu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBarraTitulo.SuspendLayout()
@@ -93,6 +98,7 @@ Partial Class FormAdministrador
         'PanelMenu
         '
         Me.PanelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.PanelMenu.Controls.Add(Me.PanelReporteSubmenu)
         Me.PanelMenu.Controls.Add(Me.Panel1)
         Me.PanelMenu.Controls.Add(Me.btnCerrarSesion)
         Me.PanelMenu.Controls.Add(Me.btnReporte)
@@ -102,6 +108,80 @@ Partial Class FormAdministrador
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(240, 473)
         Me.PanelMenu.TabIndex = 1
+        '
+        'PanelReporteSubmenu
+        '
+        Me.PanelReporteSubmenu.BackColor = System.Drawing.Color.White
+        Me.PanelReporteSubmenu.Controls.Add(Me.btnReporteHorasConsumidas)
+        Me.PanelReporteSubmenu.Controls.Add(Me.btnReporteEntradaSalida)
+        Me.PanelReporteSubmenu.Controls.Add(Me.btnReporteConsolidado)
+        Me.PanelReporteSubmenu.Location = New System.Drawing.Point(4, 189)
+        Me.PanelReporteSubmenu.Name = "PanelReporteSubmenu"
+        Me.PanelReporteSubmenu.Size = New System.Drawing.Size(233, 120)
+        Me.PanelReporteSubmenu.TabIndex = 5
+        '
+        'btnReporteHorasConsumidas
+        '
+        Me.btnReporteHorasConsumidas.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnReporteHorasConsumidas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnReporteHorasConsumidas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnReporteHorasConsumidas.FlatAppearance.BorderSize = 0
+        Me.btnReporteHorasConsumidas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnReporteHorasConsumidas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
+        Me.btnReporteHorasConsumidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporteHorasConsumidas.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporteHorasConsumidas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.btnReporteHorasConsumidas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteHorasConsumidas.Location = New System.Drawing.Point(0, 80)
+        Me.btnReporteHorasConsumidas.Name = "btnReporteHorasConsumidas"
+        Me.btnReporteHorasConsumidas.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnReporteHorasConsumidas.Size = New System.Drawing.Size(233, 40)
+        Me.btnReporteHorasConsumidas.TabIndex = 2
+        Me.btnReporteHorasConsumidas.Text = "Reporte Horas Consumidas"
+        Me.btnReporteHorasConsumidas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteHorasConsumidas.UseVisualStyleBackColor = False
+        '
+        'btnReporteEntradaSalida
+        '
+        Me.btnReporteEntradaSalida.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnReporteEntradaSalida.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnReporteEntradaSalida.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnReporteEntradaSalida.FlatAppearance.BorderSize = 0
+        Me.btnReporteEntradaSalida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnReporteEntradaSalida.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
+        Me.btnReporteEntradaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporteEntradaSalida.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporteEntradaSalida.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.btnReporteEntradaSalida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteEntradaSalida.Location = New System.Drawing.Point(0, 40)
+        Me.btnReporteEntradaSalida.Name = "btnReporteEntradaSalida"
+        Me.btnReporteEntradaSalida.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnReporteEntradaSalida.Size = New System.Drawing.Size(233, 40)
+        Me.btnReporteEntradaSalida.TabIndex = 1
+        Me.btnReporteEntradaSalida.Text = "Reporte Entrada Salida"
+        Me.btnReporteEntradaSalida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteEntradaSalida.UseVisualStyleBackColor = False
+        '
+        'btnReporteConsolidado
+        '
+        Me.btnReporteConsolidado.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnReporteConsolidado.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnReporteConsolidado.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnReporteConsolidado.FlatAppearance.BorderSize = 0
+        Me.btnReporteConsolidado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnReporteConsolidado.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
+        Me.btnReporteConsolidado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporteConsolidado.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporteConsolidado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(182, Byte), Integer))
+        Me.btnReporteConsolidado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteConsolidado.Location = New System.Drawing.Point(0, 0)
+        Me.btnReporteConsolidado.Name = "btnReporteConsolidado"
+        Me.btnReporteConsolidado.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
+        Me.btnReporteConsolidado.Size = New System.Drawing.Size(233, 40)
+        Me.btnReporteConsolidado.TabIndex = 0
+        Me.btnReporteConsolidado.Text = "Reporte Consolidado"
+        Me.btnReporteConsolidado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteConsolidado.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -113,6 +193,28 @@ Partial Class FormAdministrador
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(240, 100)
         Me.Panel1.TabIndex = 4
+        '
+        'Labelapellidos
+        '
+        Me.Labelapellidos.AutoSize = True
+        Me.Labelapellidos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labelapellidos.ForeColor = System.Drawing.SystemColors.Control
+        Me.Labelapellidos.Location = New System.Drawing.Point(82, 64)
+        Me.Labelapellidos.Name = "Labelapellidos"
+        Me.Labelapellidos.Size = New System.Drawing.Size(46, 16)
+        Me.Labelapellidos.TabIndex = 4
+        Me.Labelapellidos.Text = "Label1"
+        '
+        'Labelnombres
+        '
+        Me.Labelnombres.AutoSize = True
+        Me.Labelnombres.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labelnombres.ForeColor = System.Drawing.SystemColors.Control
+        Me.Labelnombres.Location = New System.Drawing.Point(82, 48)
+        Me.Labelnombres.Name = "Labelnombres"
+        Me.Labelnombres.Size = New System.Drawing.Size(46, 16)
+        Me.Labelnombres.TabIndex = 3
+        Me.Labelnombres.Text = "Label1"
         '
         'LabelUsuario
         '
@@ -157,8 +259,8 @@ Partial Class FormAdministrador
         '
         Me.btnReporte.FlatAppearance.BorderSize = 0
         Me.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReporte.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReporte.ForeColor = System.Drawing.SystemColors.Control
         Me.btnReporte.Image = CType(resources.GetObject("btnReporte.Image"), System.Drawing.Image)
@@ -167,15 +269,15 @@ Partial Class FormAdministrador
         Me.btnReporte.Name = "btnReporte"
         Me.btnReporte.Size = New System.Drawing.Size(234, 38)
         Me.btnReporte.TabIndex = 1
-        Me.btnReporte.Text = "Reporte"
+        Me.btnReporte.Text = "Reportes"
         Me.btnReporte.UseVisualStyleBackColor = True
         '
         'btnUsuario
         '
         Me.btnUsuario.FlatAppearance.BorderSize = 0
         Me.btnUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUsuario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsuario.ForeColor = System.Drawing.SystemColors.Control
         Me.btnUsuario.Image = CType(resources.GetObject("btnUsuario.Image"), System.Drawing.Image)
@@ -245,28 +347,6 @@ Partial Class FormAdministrador
         Me.btnCerrar.TabIndex = 0
         Me.btnCerrar.TabStop = False
         '
-        'Labelnombres
-        '
-        Me.Labelnombres.AutoSize = True
-        Me.Labelnombres.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Labelnombres.ForeColor = System.Drawing.SystemColors.Control
-        Me.Labelnombres.Location = New System.Drawing.Point(82, 48)
-        Me.Labelnombres.Name = "Labelnombres"
-        Me.Labelnombres.Size = New System.Drawing.Size(46, 16)
-        Me.Labelnombres.TabIndex = 3
-        Me.Labelnombres.Text = "Label1"
-        '
-        'Labelapellidos
-        '
-        Me.Labelapellidos.AutoSize = True
-        Me.Labelapellidos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Labelapellidos.ForeColor = System.Drawing.SystemColors.Control
-        Me.Labelapellidos.Location = New System.Drawing.Point(82, 64)
-        Me.Labelapellidos.Name = "Labelapellidos"
-        Me.Labelapellidos.Size = New System.Drawing.Size(46, 16)
-        Me.Labelapellidos.TabIndex = 4
-        Me.Labelapellidos.Text = "Label1"
-        '
         'FormAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -283,6 +363,7 @@ Partial Class FormAdministrador
         Me.PanelForm.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelMenu.ResumeLayout(False)
+        Me.PanelReporteSubmenu.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -313,4 +394,8 @@ Partial Class FormAdministrador
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Labelapellidos As Label
     Friend WithEvents Labelnombres As Label
+    Private WithEvents PanelReporteSubmenu As Panel
+    Private WithEvents btnReporteHorasConsumidas As Button
+    Private WithEvents btnReporteEntradaSalida As Button
+    Private WithEvents btnReporteConsolidado As Button
 End Class

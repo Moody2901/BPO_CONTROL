@@ -4,6 +4,23 @@ Imports System.Threading
 
 Public Class FormUsuario
 
+    Private Sub hideSubmenu()
+
+        PanelReporteSubmenu.Visible = False
+
+    End Sub
+
+    Private Sub showSubmenu(submenu As Panel)
+
+        If submenu.Visible = False Then
+            hideSubmenu()
+            submenu.Visible = True
+        Else
+            submenu.Visible = False
+        End If
+
+    End Sub
+
     Private ReadOnly nombreUsuario As String
     Private NombresUsuario As String
     Private ApellidosUsuario As String
@@ -26,6 +43,9 @@ Public Class FormUsuario
         ' Iniciar el Timer para actualizar la hora cada segundo
         Timer1.Interval = 1000 ' Intervalo de actualización en milisegundos (1000 ms = 1 segundo)
         Timer1.Start()
+
+
+        hideSubmenu()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -101,21 +121,26 @@ Public Class FormUsuario
 
     Private Sub btnBreak1_Click(sender As Object, e As EventArgs) Handles btnBreak1.Click
         AbrirFormEnPanel(Of FormBreak1)()
-        btnBreak1.BackColor = Color.FromArgb(12, 61, 92)
+        btnBreak1.BackColor = SystemColors.Control
     End Sub
 
     Private Sub btnAlmuerzo_Click(sender As Object, e As EventArgs) Handles btnAlmuerzo.Click
         AbrirFormEnPanel(Of FormAlmuerzo)()
-        btnAlmuerzo.BackColor = Color.FromArgb(12, 61, 92)
+        btnAlmuerzo.BackColor = SystemColors.Control
     End Sub
 
     Private Sub btnBreak2_Click(sender As Object, e As EventArgs) Handles btnBreak2.Click
         AbrirFormEnPanel(Of FormBreak2)()
-        btnBreak2.BackColor = Color.FromArgb(12, 61, 92)
+        btnBreak2.BackColor = SystemColors.Control
     End Sub
 
     Private Sub btnCena_Click(sender As Object, e As EventArgs) Handles btnCena.Click
         AbrirFormEnPanel(Of FormCena)()
-        btnCena.BackColor = Color.FromArgb(12, 61, 92)
+        btnCena.BackColor = SystemColors.Control
+    End Sub
+
+    Private Sub btnDescanso_Click(sender As Object, e As EventArgs) Handles btnDescanso.Click
+        showSubmenu(PanelReporteSubmenu)
+        btnDescanso.BackColor = Color.FromArgb(12, 61, 92)
     End Sub
 End Class
