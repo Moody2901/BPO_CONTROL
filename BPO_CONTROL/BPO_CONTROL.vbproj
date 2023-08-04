@@ -104,6 +104,30 @@
     <Compile Include="FormAgregar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormAlmuerzo.Designer.vb">
+      <DependentUpon>FormAlmuerzo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlmuerzo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBreak1.Designer.vb">
+      <DependentUpon>FormBreak1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBreak1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBreak2.Designer.vb">
+      <DependentUpon>FormBreak2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBreak2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCena.Designer.vb">
+      <DependentUpon>FormCena.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCena.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCrud.Designer.vb">
       <DependentUpon>FormCrud.vb</DependentUpon>
     </Compile>
@@ -163,6 +187,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgregar.resx">
       <DependentUpon>FormAgregar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlmuerzo.resx">
+      <DependentUpon>FormAlmuerzo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBreak1.resx">
+      <DependentUpon>FormBreak1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBreak2.resx">
+      <DependentUpon>FormBreak2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCena.resx">
+      <DependentUpon>FormCena.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCrud.resx">
       <DependentUpon>FormCrud.vb</DependentUpon>

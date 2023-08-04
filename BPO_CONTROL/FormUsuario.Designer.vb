@@ -28,28 +28,26 @@ Partial Class FormUsuario
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnCena = New System.Windows.Forms.Button()
+        Me.btnBreak2 = New System.Windows.Forms.Button()
+        Me.btnAlmuerzo = New System.Windows.Forms.Button()
+        Me.btnBreak1 = New System.Windows.Forms.Button()
+        Me.Labelapellidos = New System.Windows.Forms.Label()
+        Me.Labelnombres = New System.Windows.Forms.Label()
         Me.LabelUsuario = New System.Windows.Forms.Label()
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.LabelHora = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.LabelCronometro = New System.Windows.Forms.Label()
-        Me.TimerCronometro = New System.Windows.Forms.Timer(Me.components)
-        Me.btnIniciarCronometro = New System.Windows.Forms.PictureBox()
-        Me.btnDetenerCronometro = New System.Windows.Forms.PictureBox()
-        Me.btnRestaurarTimer = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.SissaLogo = New System.Windows.Forms.PictureBox()
-        Me.Labelnombres = New System.Windows.Forms.Label()
-        Me.Labelapellidos = New System.Windows.Forms.Label()
+        Me.PanelForm = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnIniciarCronometro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnDetenerCronometro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SissaLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelForm.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -85,6 +83,10 @@ Partial Class FormUsuario
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.btnCena)
+        Me.Panel3.Controls.Add(Me.btnBreak2)
+        Me.Panel3.Controls.Add(Me.btnAlmuerzo)
+        Me.Panel3.Controls.Add(Me.btnBreak1)
         Me.Panel3.Controls.Add(Me.Labelapellidos)
         Me.Panel3.Controls.Add(Me.Labelnombres)
         Me.Panel3.Controls.Add(Me.LabelUsuario)
@@ -96,6 +98,96 @@ Partial Class FormUsuario
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(200, 410)
         Me.Panel3.TabIndex = 5
+        '
+        'btnCena
+        '
+        Me.btnCena.FlatAppearance.BorderSize = 0
+        Me.btnCena.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnCena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.btnCena.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCena.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCena.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnCena.Image = CType(resources.GetObject("btnCena.Image"), System.Drawing.Image)
+        Me.btnCena.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCena.Location = New System.Drawing.Point(3, 254)
+        Me.btnCena.Name = "btnCena"
+        Me.btnCena.Size = New System.Drawing.Size(194, 38)
+        Me.btnCena.TabIndex = 18
+        Me.btnCena.Text = "CENA"
+        Me.btnCena.UseVisualStyleBackColor = True
+        '
+        'btnBreak2
+        '
+        Me.btnBreak2.FlatAppearance.BorderSize = 0
+        Me.btnBreak2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnBreak2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.btnBreak2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBreak2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBreak2.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnBreak2.Image = CType(resources.GetObject("btnBreak2.Image"), System.Drawing.Image)
+        Me.btnBreak2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBreak2.Location = New System.Drawing.Point(3, 210)
+        Me.btnBreak2.Name = "btnBreak2"
+        Me.btnBreak2.Size = New System.Drawing.Size(194, 38)
+        Me.btnBreak2.TabIndex = 17
+        Me.btnBreak2.Text = "BREAK 2"
+        Me.btnBreak2.UseVisualStyleBackColor = True
+        '
+        'btnAlmuerzo
+        '
+        Me.btnAlmuerzo.FlatAppearance.BorderSize = 0
+        Me.btnAlmuerzo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnAlmuerzo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.btnAlmuerzo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAlmuerzo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAlmuerzo.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnAlmuerzo.Image = CType(resources.GetObject("btnAlmuerzo.Image"), System.Drawing.Image)
+        Me.btnAlmuerzo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAlmuerzo.Location = New System.Drawing.Point(3, 166)
+        Me.btnAlmuerzo.Name = "btnAlmuerzo"
+        Me.btnAlmuerzo.Size = New System.Drawing.Size(194, 38)
+        Me.btnAlmuerzo.TabIndex = 16
+        Me.btnAlmuerzo.Text = "ALMUERZO"
+        Me.btnAlmuerzo.UseVisualStyleBackColor = True
+        '
+        'btnBreak1
+        '
+        Me.btnBreak1.FlatAppearance.BorderSize = 0
+        Me.btnBreak1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnBreak1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.btnBreak1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBreak1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBreak1.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnBreak1.Image = CType(resources.GetObject("btnBreak1.Image"), System.Drawing.Image)
+        Me.btnBreak1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBreak1.Location = New System.Drawing.Point(3, 122)
+        Me.btnBreak1.Name = "btnBreak1"
+        Me.btnBreak1.Size = New System.Drawing.Size(194, 38)
+        Me.btnBreak1.TabIndex = 15
+        Me.btnBreak1.Text = "BREAK 1"
+        Me.btnBreak1.UseVisualStyleBackColor = True
+        '
+        'Labelapellidos
+        '
+        Me.Labelapellidos.AutoSize = True
+        Me.Labelapellidos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labelapellidos.ForeColor = System.Drawing.SystemColors.Control
+        Me.Labelapellidos.Location = New System.Drawing.Point(82, 64)
+        Me.Labelapellidos.Name = "Labelapellidos"
+        Me.Labelapellidos.Size = New System.Drawing.Size(46, 16)
+        Me.Labelapellidos.TabIndex = 14
+        Me.Labelapellidos.Text = "Label1"
+        '
+        'Labelnombres
+        '
+        Me.Labelnombres.AutoSize = True
+        Me.Labelnombres.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labelnombres.ForeColor = System.Drawing.SystemColors.Control
+        Me.Labelnombres.Location = New System.Drawing.Point(82, 48)
+        Me.Labelnombres.Name = "Labelnombres"
+        Me.Labelnombres.Size = New System.Drawing.Size(46, 16)
+        Me.Labelnombres.TabIndex = 13
+        Me.Labelnombres.Text = "Label1"
         '
         'LabelUsuario
         '
@@ -131,7 +223,7 @@ Partial Class FormUsuario
         Me.LabelHora.AutoSize = True
         Me.LabelHora.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelHora.ForeColor = System.Drawing.SystemColors.Control
-        Me.LabelHora.Location = New System.Drawing.Point(26, 161)
+        Me.LabelHora.Location = New System.Drawing.Point(12, 94)
         Me.LabelHora.Name = "LabelHora"
         Me.LabelHora.Size = New System.Drawing.Size(79, 25)
         Me.LabelHora.TabIndex = 10
@@ -150,119 +242,33 @@ Partial Class FormUsuario
         'Timer1
         '
         '
-        'LabelCronometro
+        'PanelForm
         '
-        Me.LabelCronometro.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelCronometro.AutoSize = True
-        Me.LabelCronometro.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCronometro.ForeColor = System.Drawing.Color.Black
-        Me.LabelCronometro.Location = New System.Drawing.Point(421, 324)
-        Me.LabelCronometro.Name = "LabelCronometro"
-        Me.LabelCronometro.Size = New System.Drawing.Size(158, 32)
-        Me.LabelCronometro.TabIndex = 12
-        Me.LabelCronometro.Text = "00:00:00.00"
-        Me.LabelCronometro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PanelForm.Controls.Add(Me.PictureBox1)
+        Me.PanelForm.Location = New System.Drawing.Point(203, 40)
+        Me.PanelForm.Name = "PanelForm"
+        Me.PanelForm.Size = New System.Drawing.Size(597, 410)
+        Me.PanelForm.TabIndex = 2
         '
-        'TimerCronometro
+        'PictureBox1
         '
-        '
-        'btnIniciarCronometro
-        '
-        Me.btnIniciarCronometro.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.PictureBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnIniciarCronometro.Image = CType(resources.GetObject("btnIniciarCronometro.Image"), System.Drawing.Image)
-        Me.btnIniciarCronometro.Location = New System.Drawing.Point(436, 155)
-        Me.btnIniciarCronometro.Name = "btnIniciarCronometro"
-        Me.btnIniciarCronometro.Size = New System.Drawing.Size(128, 128)
-        Me.btnIniciarCronometro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnIniciarCronometro.TabIndex = 13
-        Me.btnIniciarCronometro.TabStop = False
-        '
-        'btnDetenerCronometro
-        '
-        Me.btnDetenerCronometro.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDetenerCronometro.Image = CType(resources.GetObject("btnDetenerCronometro.Image"), System.Drawing.Image)
-        Me.btnDetenerCronometro.Location = New System.Drawing.Point(436, 155)
-        Me.btnDetenerCronometro.Name = "btnDetenerCronometro"
-        Me.btnDetenerCronometro.Size = New System.Drawing.Size(128, 128)
-        Me.btnDetenerCronometro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnDetenerCronometro.TabIndex = 14
-        Me.btnDetenerCronometro.TabStop = False
-        '
-        'btnRestaurarTimer
-        '
-        Me.btnRestaurarTimer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRestaurarTimer.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRestaurarTimer.Location = New System.Drawing.Point(436, 394)
-        Me.btnRestaurarTimer.Name = "btnRestaurarTimer"
-        Me.btnRestaurarTimer.Size = New System.Drawing.Size(128, 37)
-        Me.btnRestaurarTimer.TabIndex = 15
-        Me.btnRestaurarTimer.Text = "Restaurar Tiempo"
-        Me.btnRestaurarTimer.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(248, 56)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(533, 56)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "TIEMPO DESCANSADO"
-        '
-        'SissaLogo
-        '
-        Me.SissaLogo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SissaLogo.Image = CType(resources.GetObject("SissaLogo.Image"), System.Drawing.Image)
-        Me.SissaLogo.Location = New System.Drawing.Point(206, 124)
-        Me.SissaLogo.Name = "SissaLogo"
-        Me.SissaLogo.Size = New System.Drawing.Size(582, 197)
-        Me.SissaLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.SissaLogo.TabIndex = 17
-        Me.SissaLogo.TabStop = False
-        Me.SissaLogo.Visible = False
-        '
-        'Labelnombres
-        '
-        Me.Labelnombres.AutoSize = True
-        Me.Labelnombres.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Labelnombres.ForeColor = System.Drawing.SystemColors.Control
-        Me.Labelnombres.Location = New System.Drawing.Point(82, 48)
-        Me.Labelnombres.Name = "Labelnombres"
-        Me.Labelnombres.Size = New System.Drawing.Size(46, 16)
-        Me.Labelnombres.TabIndex = 13
-        Me.Labelnombres.Text = "Label1"
-        '
-        'Labelapellidos
-        '
-        Me.Labelapellidos.AutoSize = True
-        Me.Labelapellidos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Labelapellidos.ForeColor = System.Drawing.SystemColors.Control
-        Me.Labelapellidos.Location = New System.Drawing.Point(82, 64)
-        Me.Labelapellidos.Name = "Labelapellidos"
-        Me.Labelapellidos.Size = New System.Drawing.Size(46, 16)
-        Me.Labelapellidos.TabIndex = 14
-        Me.Labelapellidos.Text = "Label1"
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(55, 94)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(474, 201)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'FormUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.SissaLogo)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnRestaurarTimer)
-        Me.Controls.Add(Me.btnDetenerCronometro)
-        Me.Controls.Add(Me.btnIniciarCronometro)
-        Me.Controls.Add(Me.LabelCronometro)
+        Me.Controls.Add(Me.PanelForm)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -277,11 +283,9 @@ Partial Class FormUsuario
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnIniciarCronometro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnDetenerCronometro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SissaLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelForm.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -293,14 +297,13 @@ Partial Class FormUsuario
     Friend WithEvents LabelHora As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnCerrarSesion As Button
-    Friend WithEvents LabelCronometro As Label
-    Friend WithEvents TimerCronometro As Timer
-    Friend WithEvents btnIniciarCronometro As PictureBox
-    Friend WithEvents btnDetenerCronometro As PictureBox
-    Friend WithEvents btnRestaurarTimer As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents SissaLogo As PictureBox
     Friend WithEvents LabelUsuario As Label
     Friend WithEvents Labelapellidos As Label
     Friend WithEvents Labelnombres As Label
+    Friend WithEvents btnCena As Button
+    Friend WithEvents btnBreak2 As Button
+    Friend WithEvents btnAlmuerzo As Button
+    Friend WithEvents btnBreak1 As Button
+    Friend WithEvents PanelForm As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -17,85 +17,15 @@ Public Class FormUsuario
     Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
-
-    Private cronometro As New Stopwatch()
-
     Private Sub FormUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Mostrar el nombre y apellidos del usuario en las etiquetas correspondientes
-        LabelUsuario.Text = "Bienvenido"  
+        LabelUsuario.Text = "Bienvenido"
         Labelnombres.Text = NombresUsuario
         Labelapellidos.Text = ApellidosUsuario
 
         ' Iniciar el Timer para actualizar la hora cada segundo
         Timer1.Interval = 1000 ' Intervalo de actualización en milisegundos (1000 ms = 1 segundo)
         Timer1.Start()
-
-        ' Inicializar el cronómetro
-        cronometro = New Stopwatch()
-
-        ' Configurar el Label del cronómetro con el formato inicial "00:00:00.00"
-        LabelCronometro.Text = "00:00:00.00"
-
-        ' Configurar la visibilidad de los botones
-        btnDetenerCronometro.Visible = False
-        btnRestaurarTimer.Enabled = False
-    End Sub
-
-    ' Evento Tick del Timer para actualizar el Label del cronómetro
-    Private Sub TimerCronometro_Tick(sender As Object, e As EventArgs) Handles TimerCronometro.Tick
-        ' Actualizar el Label con el tiempo transcurrido del cronómetro, incluyendo los microsegundos
-        LabelCronometro.Text = cronometro.Elapsed.ToString("hh\:mm\:ss\.ff")
-    End Sub
-
-    ' Botón "Iniciar"
-    Private Sub btnIniciarCronometro_Click(sender As Object, e As EventArgs) Handles btnIniciarCronometro.Click
-        ' Iniciar el cronómetro solo si no está en marcha
-        If Not cronometro.IsRunning Then
-            cronometro.Start()
-            TimerCronometro.Start()
-
-            ' Configurar la visibilidad de los botones
-            btnIniciarCronometro.Visible = False
-            btnDetenerCronometro.Visible = True
-            btnRestaurarTimer.Enabled = False
-
-            ' Ocultar el PictureBox SissaLogo
-            SissaLogo.Visible = False
-        End If
-    End Sub
-
-    ' Botón "Detener"
-    Private Sub btnDetenerCronometro_Click(sender As Object, e As EventArgs) Handles btnDetenerCronometro.Click
-        ' Detener el cronómetro solo si está en marcha
-        ' Detener el cronómetro solo si está en marcha
-        If cronometro.IsRunning Then
-            cronometro.Stop()
-            TimerCronometro.Stop()
-
-            ' Configurar la visibilidad de los botones
-            btnDetenerCronometro.Visible = False
-            btnIniciarCronometro.Visible = True
-            btnRestaurarTimer.Enabled = True
-
-            ' Mostrar el PictureBox SissaLogo
-            SissaLogo.Visible = True
-        End If
-    End Sub
-
-    ' Botón "Restaurar"
-    Private Sub btnRestaurarTimer_Click(sender As Object, e As EventArgs) Handles btnRestaurarTimer.Click
-        ' Detener el cronómetro y restablecer el tiempo a cero
-        cronometro.Reset()
-        LabelCronometro.Text = "00:00:00.00"
-
-        ' Ocultar el PictureBox SissaLogo
-        SissaLogo.Visible = False
-
-        ' Configurar la visibilidad de los botones
-        btnIniciarCronometro.Visible = True
-        btnDetenerCronometro.Visible = False
-        btnRestaurarTimer.Enabled = False
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -128,4 +58,64 @@ Public Class FormUsuario
     End Sub
 
 
+    ' Método para abrir un formulario en el panel de contenido (PanelForm) y mostrarlo al frente.
+    Private Sub AbrirFormEnPanel(Of Miform As {Form, New})()
+        Dim Formulario As Form
+        Formulario = PanelForm.Controls.OfType(Of Miform)().FirstOrDefault() ' Busca el formulario en la colección.
+
+        ' Si el formulario no fue encontrado (no existe), lo crea y lo agrega al panel.
+        If Formulario Is Nothing Then
+            Formulario = New Miform()
+            Formulario.TopLevel = False
+            Formulario.FormBorderStyle = FormBorderStyle.None
+            Formulario.Dock = DockStyle.Fill
+
+            PanelForm.Controls.Add(Formulario)
+            PanelForm.Tag = Formulario
+            AddHandler Formulario.FormClosed, AddressOf Me.CerrarFormulario
+            Formulario.Show()
+            Formulario.BringToFront()
+        Else
+            Formulario.BringToFront()
+        End If
+    End Sub
+
+    Private Sub CerrarFormulario(sender As Object, e As FormClosedEventArgs)
+        ' Condición para saber si los formularios están abiertos.
+        If (Application.OpenForms("FormBreak1") Is Nothing) Then
+            btnBreak1.BackColor = Color.FromArgb(37, 54, 75)
+        End If
+
+        If (Application.OpenForms("FormAlmuerzo") Is Nothing) Then
+            btnAlmuerzo.BackColor = Color.FromArgb(37, 54, 75)
+        End If
+
+        If (Application.OpenForms("FormBreak2") Is Nothing) Then
+            btnBreak2.BackColor = Color.FromArgb(37, 54, 75)
+        End If
+
+        If (Application.OpenForms("FormCena") Is Nothing) Then
+            btnCena.BackColor = Color.FromArgb(37, 54, 75)
+        End If
+    End Sub
+
+    Private Sub btnBreak1_Click(sender As Object, e As EventArgs) Handles btnBreak1.Click
+        AbrirFormEnPanel(Of FormBreak1)()
+        btnBreak1.BackColor = Color.FromArgb(12, 61, 92)
+    End Sub
+
+    Private Sub btnAlmuerzo_Click(sender As Object, e As EventArgs) Handles btnAlmuerzo.Click
+        AbrirFormEnPanel(Of FormAlmuerzo)()
+        btnAlmuerzo.BackColor = Color.FromArgb(12, 61, 92)
+    End Sub
+
+    Private Sub btnBreak2_Click(sender As Object, e As EventArgs) Handles btnBreak2.Click
+        AbrirFormEnPanel(Of FormBreak2)()
+        btnBreak2.BackColor = Color.FromArgb(12, 61, 92)
+    End Sub
+
+    Private Sub btnCena_Click(sender As Object, e As EventArgs) Handles btnCena.Click
+        AbrirFormEnPanel(Of FormCena)()
+        btnCena.BackColor = Color.FromArgb(12, 61, 92)
+    End Sub
 End Class
